@@ -5,7 +5,7 @@ Proceso Ejercicio30
 	Definir divisor Como Entero;
 	
 	//Entradas
-	Escribir 'Digite un numero numero';
+	Escribir 'Digite un numero de dos digitos';
 	Leer num1;
 	Escribir 'Digite el divisor numero';
 	Leer divisor;

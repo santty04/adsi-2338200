@@ -6,7 +6,7 @@ Proceso Ejercicio17
 	definir num_2 como entero;
 	
 	//entradas
-	escribir "Escriba el priimer numero";
+	escribir "Escriba el primer numero";
 	leer num_1;
 	Escribir "Escriba el segundo numero";
 	leer num_2;
