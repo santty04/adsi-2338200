@@ -1,38 +1,41 @@
-header#header>nav.navbar-inverse.navbar-fixed-top>div.navbar-header>button.navbar-toggle.collapse.navbar-collapse>span.sr-only>span.icon-bar>span.icon-bar>span.icon-bar>a.navbar-brand.index.php>div.collapsenavbar-collapsenavbar-right>ul.navnavbar-nav>li>a.link.index.html.inicio>li.activelink>a.login.html.ingresar>li>a.link.registro.html.registrarse>li>a.link.contacto.html.contacto
+<h1> Reto Emmet: </h1>
+<hr>
+<h2>Codigo </h2>
+    header#header>nav.navbar.navbar-inverse.navbar-fixed-top>div.container>(div.navbar-header>(btn[type=button].navbar-toggle[data-toggle=collapse][data-target=.navbar-collapse]>span.sr-only{toggle navigation}+span*3.icon-bar)+(a[href=index.php.navbar-brand]>img[src=imgs/logo.png]))+(div.collapse.navbar-collapse.navbar-rigth>ul.nav.navbar-nav>(li>a.link[href=index.html]{inicio})+(li.active.link>a[href=login.html{ingresar}])+(li>a.link[href=registro.html]{registrarse})+(li>a.link[href=contacto.html]{contacto}))
+
+<h2>Resultado: </h2>
 <xmp>
     <header id="header">
-        <nav class="navbar-inverse navbar-fixed-top">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapse navbar-collapse">
-                    <span class="sr-only">
-                        <span class="icon-bar">
-                            <span class="icon-bar">
-                                <span class="icon-bar">
-                                    <a href="" class="navbar-brand index php">
-                                        <div class="collapsenavbar-collapsenavbar-right">
-                                            <ul class="navnavbar-nav">
-                                                <li>
-                                                    <a href="" class="link index html inicio">
-                                                        <li class="activelink">
-                                                            <a href="" class="login html ingresar">
-                                                                <li>
-                                                                    <a href="" class="link registro html registrarse">
-                                                                        <li><a href="" class="link contacto html contacto"></a></li>
-                                                                    </a>
-                                                                </li>
-                                                            </a>
-                                                        </li>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                </span>
-                            </span>
-                        </span>
-                    </span>
-                </button>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.php" class="navbar-brand">
+                        <img src="imgs/logo.png" alt="">
+                    </a>
+                </div>
+                    <div class="collapse navbar-collapse        navbar-rigth">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="index.html" class="link">inicio</a>
+                            </li>
+                            <li class="active link">
+                                <a href="login.html{ingresar}"></a>
+                            </li>
+                            <li>
+                                <a href="registro.html" class="link">registrarse</a>
+                            </li>
+                            <li>
+                                <a href="contacto.html" class="link">contacto</a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </nav>
     </header>
-    </xmp>
+</xmp>
