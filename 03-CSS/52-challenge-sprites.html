@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Sprites</title>
+    <style>
+        body{
+            background-color:#17a053;
+            border: 10px solid #fff;
+            margin: 0%;
+            height: 100vh;
+        }
+        main{
+            border: 1px solid white;
+            margin: 0% auto;
+            width: 80%;
+        }
+        main header div.logo{
+            background: url(images/spriteweb.png) no-repeat;
+            background-position: -20px -400px;
+            height: 180px;
+            margin: 0px auto;
+            width: 180px;
+
+        }
+        main header div.menu ul{
+            list-style: none;
+            margin: 0% auto;
+            padding: 0%;
+            width: 60%;
+        }
+        main section.gallery{
+            width: 70%;
+            margin: 40px auto;
+            background-color: #00000066;
+        }
+        main section.gallery div h3{
+            text-align: center;
+            font-family: Verdana;
+            background-color: #ffffff44;
+            height: 70px;
+            padding: 0%;
+            margin-top: -0.5px;
+            transition: 0.3s all ease-in;
+            
+        }
+        main section.gallery div h3:hover{
+            cursor: pointer;
+            background: #ffffff88;
+        }
+        main section.gallery div{
+            
+            display: inline-block;
+            height: 200px;
+            width: 290px;
+            margin: 20px;
+            padding: 0%;
+            font-family: Verdana;
+            margin-left: 30px;
+            background: url(images/spriteweb.png) no-repeat;
+            background-position: -500px -8px;
+            border: 2px solid white;
+            
+            
+        }
+        main header div.menu ul li{
+            background-color: #00000066;
+            border-bottom: 4px solid #fff;
+            color: #fff;
+            font-family: Verdana;
+            display: inline-block;
+            margin-top: 4px;
+            padding: 16px 20px;
+            text-transform: uppercase;
+            transition: 0.3s all ease-in;
+            text-align: center;
+            width: 120px;
+        }
+        main header div.menu ul li:hover {
+            background: #000000bb;
+            border-bottom: 4px solid #fad000;
+            cursor: pointer;
+        }
+        main section.content{
+            background-color: #00000066;
+        }
+        
+        @media (max-width: 780px) {
+            main header div.menu ul li {
+                display: block;
+                width: 88%;
+            }
+        }
+    </style>
+        
+       
+     
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo"></div>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Portfolio</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </header>
+
+        <!--GALLERY-->
+        
+
+
+        <section class="gallery">
+            <div class="gallery01">
+                <h3>Sprite 01</h3>
+            </div>
+            <div class="gallery02">
+                <h3>Sprite 02</h3>
+            </div>
+            <div class="gallery03">
+                <h3>Sprite 03</h3>
+            </div>
+        </section>
+        <section class="content">
+            <div class="content01">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero praesentium aliquam sed ut modi, facilis atque deserunt exercitationem natus labore nesciunt amet suscipit itaque enim iure, harum cumque! Ut, fugiat?
+            </div>
+            <div class="content02">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit minima facilis, molestias explicabo mollitia ab cumque molestiae quos itaque aliquid. Voluptatem expedita cumque provident dolores blanditiis explicabo repudiandae quo optio?
+            </div>
+            <div class="content03">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem dolorum dolore soluta accusamus. Laboriosam reiciendis, cupiditate magnam laudantium perferendis nisi soluta cumque mollitia repellendus eaque illum eum dolor ducimus accusantium.
+            </div>
+        </section>
+        <footer></footer>
+    </main>
+</body>
+</html>
