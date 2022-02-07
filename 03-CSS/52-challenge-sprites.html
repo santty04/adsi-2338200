@@ -10,10 +10,10 @@
             background-color:#17a053;
             border: 10px solid #fff;
             margin: 0%;
-            height: 100vh;
+            height: 1450px;
+            
         }
         main{
-            border: 1px solid white;
             margin: 0% auto;
             width: 80%;
         }
@@ -31,6 +31,12 @@
             padding: 0%;
             width: 60%;
         }
+        @media (max-width: 780px) {
+            main header div.menu ul li {
+                display: block;
+                width: 88%;
+            }
+        }
         main section.gallery{
             width: 70%;
             margin: 40px auto;
@@ -44,6 +50,8 @@
             padding: 0%;
             margin-top: -0.5px;
             transition: 0.3s all ease-in;
+            
+            
             
         }
         main section.gallery div h3:hover{
@@ -62,6 +70,7 @@
             background: url(images/spriteweb.png) no-repeat;
             background-position: -500px -8px;
             border: 2px solid white;
+            
             
             
         }
@@ -83,16 +92,99 @@
             border-bottom: 4px solid #fad000;
             cursor: pointer;
         }
-        main section.content{
-            background-color: #00000066;
-        }
+        main section.content {
+        background-color: #00000066;
+        width: 70%;
+        margin: 30px auto;
+        padding: 10px;
+      }
+      main section.content article{
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
         
-        @media (max-width: 780px) {
-            main header div.menu ul li {
-                display: block;
-                width: 88%;
-            }
+      }
+      main section.content article:last-child{
+        margin-bottom: 0;
+      }
+      main section.content article div{
+        
+        display: inline-block;
+        vertical-align: top;
+      }
+      main section.content div.image1{
+        background: url(images/spriteweb.png) no-repeat;
+        background-position: -230px -489px;
+        height: 100px;
+        width: 217px;
+        margin-top: 25px;
+        transition: all 0.6s ease-in;
+      }
+      main section.content article:hover div.image1{
+          transform: rotateY(360deg);
+      }
+      main section.content div.image2{
+        background: url(images/spriteweb.png) no-repeat;
+        background-position: -30px -220px;
+        height: 150px;
+        width: 217px;
+        margin-left: 50px;
+        transition: all 0.6s ease-in;
+      }
+      main section.content article:hover div.image2{
+          transform: rotateY(360deg);
+      }
+      main section.content div.text{
+        width: 500px;
+        height: 150px;
+        font-family: Verdana;
+        text-align: justify;
+        line-height: 1.5rem;
+        transition: all 0.6s ease-in;
+      }
+      main section.content div.text:hover{
+        cursor: grab;
+        color: #17a053;
+        transform: scale(1.2);
+      }
+      main footer{
+          background-color: #fff;
+          margin: 0 auto;
+          width: 70%;
+          height: 250px;
+      }
+      main footer div.logo2{
+          background: url(images/spriteweb.png) no-repeat;
+          background-position: -470px -420px;
+          height: 180px;
+          margin: 0 auto;
+          width: 300px;
+          
+      }
+      main footer div.footer ul{
+            list-style: none;
+            margin: 0% auto;
+            padding: 0%;
+            width: 80%;
         }
+      main footer div.footer ul li{
+          display: inline-block;
+          background-color: #fff;
+          font-family: Verdana;
+          margin-top: 4px;
+          padding: 16px 20px;
+          text-transform: uppercase;
+          transition: 0.3s all ease-in;
+          text-align: center;
+          width: 120px;
+      }
+      main footer div.footer ul li:hover {
+            background: #fff;
+            border-bottom: 4px solid #17a053;
+            cursor: pointer;
+            transform: scale(1.3);
+        }
+     
     </style>
         
        
@@ -129,17 +221,34 @@
             </div>
         </section>
         <section class="content">
-            <div class="content01">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero praesentium aliquam sed ut modi, facilis atque deserunt exercitationem natus labore nesciunt amet suscipit itaque enim iure, harum cumque! Ut, fugiat?
-            </div>
-            <div class="content02">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit minima facilis, molestias explicabo mollitia ab cumque molestiae quos itaque aliquid. Voluptatem expedita cumque provident dolores blanditiis explicabo repudiandae quo optio?
-            </div>
-            <div class="content03">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem dolorum dolore soluta accusamus. Laboriosam reiciendis, cupiditate magnam laudantium perferendis nisi soluta cumque mollitia repellendus eaque illum eum dolor ducimus accusantium.
-            </div>
+            <article>
+                <div class="image1"></div>
+                <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque praesentium quod tenetur rerum perspiciatis inventore eius minus ullam reiciendis odit, qui incidunt fugiat quasi recusandae dolorem repellat, saepe blanditiis necessitatibus nihil iste, cumque facilis impedit dolore molestias. Minus magni veniam, quibusdam, possimus quidem dolorem</div>
+                <div class="image2"></div>
+            </article>
+            <article>
+                <div class="image1"></div>
+                <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque praesentium quod tenetur rerum perspiciatis inventore eius minus ullam reiciendis odit, qui incidunt fugiat quasi recusandae dolorem repellat, saepe blanditiis necessitatibus nihil iste, cumque facilis impedit dolore molestias. Minus magni veniam, quibusdam, possimus quidem dolorem</div>
+                <div class="image2"></div>
+            </article>
+            <article>
+                <div class="image1"></div>
+                <div class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque praesentium quod tenetur rerum perspiciatis inventore eius minus ullam reiciendis odit, qui incidunt fugiat quasi recusandae dolorem repellat, saepe blanditiis necessitatibus nihil iste, cumque facilis impedit dolore molestias. Minus magni veniam, quibusdam, possimus quidem dolorem</div>
+                <div class="image2"></div>
+            </article>
         </section>
-        <footer></footer>
+        <footer>
+            <div class="logo2"></div>
+            <div class="footer">
+                <ul>
+                  <li>HOME</li>
+                  <li>ABOUT</li>
+                  <li>PORTFOLIO</li>
+                  <li>SERVICES</li>
+                  <li>CONTACT</li>
+                </ul>
+              </div>
+        </footer>
     </main>
 </body>
 </html>
