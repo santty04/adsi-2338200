@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,600&display=swap');
+body{
+    background: linear-gradient(rgb(255, 166, 0), rgb(255, 0, 0));
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #08313b;
+    min-height: 100vh;
+    margin: 0px;
+}
+main {
+    border-radius: 6px;
+    padding: 20px;
+}
+main header h1 {
+    background-color: #08313b;
+    color: aliceblue;
+    padding: 15px;
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+}
