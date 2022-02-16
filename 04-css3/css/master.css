@@ -9,6 +9,8 @@ body{
 main {
     border-radius: 6px;
     padding: 20px;
+    margin: 0 auto;
+    width: 80%;
 }
 main header h1 {
     background-color: #08313b;
@@ -18,4 +20,10 @@ main header h1 {
     margin-top: 0;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
+}
+main section h2 {
+    border-bottom: 3px dotted #08313b;
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+    text-align: center;
 }
