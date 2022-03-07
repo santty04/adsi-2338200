@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        div.steps {
+            position: relative;
+            margin: 2rem auto;
+        }
+        /*  */ 
+        div.steps01 {  
+            background: url(imgs/steps1.png)no-repeat;
+            height: 509px;
+            width: 200px;
+            animation: animsteps01 0.8s steps(10) infinite;
+        }
+        @keyframes animsteps01 {
+            100% { background-position: -2000px; }
+        }
+        /* */
+        div.steps02{
+            background: url(imgs/steps2.png) no-repeat;
+            width: 190px;
+            height: 240px;
+            animation: animSteps02 1.5s steps(10) infinite;
+        }
+        @keyframes animSteps02  {
+            100% { background-position: -1900px; }
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="index.html">🏡</a>Steps</h1>
+        </header>
+        <section>
+            <h2>Example 01</h2>
+            <div class="steps steps01"></div>
+            <h2>Example 02</h2>
+            <div class="steps steps02"></div>
+            
+            
+        </section>
+    </main>
+</body>
+</html>
