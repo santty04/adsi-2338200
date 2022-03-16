@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,600&display=swap');
+body{
+    background: linear-gradient(rgb(253, 110, 134), rgb(255, 0, 0));
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #08313b;
+    min-height: 100vh;
+
+}
+main {
+    margin: 20px auto;
+    width: 380px;
+}
+main h1 {
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 4px solid #fff;
+}
+main nav.menu {
+    list-style: none;
+}
+main nav.menu li a:link,
+main nav.menu li a:visited {
+    background-color: #fff;
+    display: block;
+    color: #08313b;
+    margin-bottom: 19px;
+    padding: 15px;
+    text-decoration: none;
+    position: relative;
+    text-indent: 40px;
+    border-radius: 0px 10px 50px 0px;
+    cursor: grab;
+}
+main nav.menu li a span {
+    background-color: green;
+    border-radius: 50%;
+    border: black solid 2px;
+    padding: 20px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: -10px; left: -20px;
+    text-indent: -3px;
+    color: rgb(217, 255, 0);
+    font-size: 1.7rem;
+    line-height: 1.3rem;
+    cursor: grab;
+    transition: all 0.3s ease-in;
+}
+main nav.menu li a:hover span {
+    transform: rotate(360deg);
+    background-color: #fff;
+    color: #08313b;
+}
