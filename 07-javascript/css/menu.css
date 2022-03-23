@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,600&display=swap');
+body{
+    background: url(../images/javascript.jpg) no-repeat center;
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main{
+    background-color: #00000066;
+    border-radius: 40px;
+    border: 2px solid #aa0;
+    height: 800px;
+    width: 493px;
+}
+h1 {
+    color: #fff;
+    text-align: center;
+    border-bottom: 3px solid #aa0;
+}
+nav {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    overflow-y: auto;
+    height: 600px;
+}
+nav li {
+    list-style: none;
+}
+nav li a:link,
+nav li a:visited{
+    background-color: #fadf3888;
+    border-radius: 10px;
+    display: flex;
+    color: #000;
+    text-decoration: none;
+    width: 150px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease-in;
+    
+}
+nav li a i {
+    background-color: #000;
+    border-radius: 20px;
+    color: #fadf38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    height: 20px;
+    width: 20px;
+    transition: transform 0.2s 0.2s ease in;
+}
+nav li a:hover{
+    background-color: #fadf38;
+}
+nav li a:hover i {
+    transform: scale(1.5);
+    transition: transform 0.2s 0.2s ease-in;
+}
