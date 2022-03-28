@@ -6,8 +6,35 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    color: #ffffff;
 }
+h2, h3, h4{
+  text-align: center;
+  border-bottom: 2px dotted #ffffff;
+  padding-bottom: 10px;
+  margin: 0px 40px;
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffd500 #3d4144;
+  }
 
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: none;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffd500;
+    border-radius: 10px;
+    border: 0px solid #000000;
+  }
 main{
     background-color: #00000066;
     border-radius: 40px;
@@ -20,6 +47,14 @@ h1 {
     text-align: center;
     border-bottom: 3px solid #aa0;
 }
+header{
+  position: relative;
+}
+header h1{
+  color: #aa0;
+  text-align: center;
+  font-size: 2.4rem;
+}
 nav {
     display: flex;
     margin-top: 50px;
@@ -28,6 +63,20 @@ nav {
     align-items: center;
     overflow-y: auto;
     height: 600px;
+}
+header a:link,
+header a:visited{
+  color: #aa0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  float: left;
+  position: absolute;
+  left: 20px;
+  transition: all 0.2s ease-in;
+}
+header a:hover{
+  transform: scale(1.1) translateX(-10px);
 }
 nav li {
     list-style: none;
