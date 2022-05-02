@@ -1,0 +1,46 @@
+<svg width="762" height="280" viewBox="0 0 762 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" width="380" height="280" fill="url(#paint0_linear_58_150)"/>
+<path d="M128 35.9453C132.462 35.0918 141.307 35.4332 140.992 43.6263" stroke="black" stroke-width="0.5"/>
+<path d="M154 35.3189C149.538 34.4655 140.693 34.8068 141.008 43" stroke="black" stroke-width="0.5"/>
+<circle cx="49" cy="52" r="23" fill="white"/>
+<circle cx="74" cy="23" r="23" fill="white"/>
+<circle cx="23" cy="46" r="23" fill="white"/>
+<circle cx="38" cy="29" r="23" fill="white"/>
+<circle cx="72" cy="44" r="23" fill="white"/>
+<circle cx="91" cy="39" r="23" fill="white"/>
+<circle cx="272" cy="91" r="23" fill="white"/>
+<circle cx="297" cy="62" r="23" fill="white"/>
+<circle cx="246" cy="85" r="23" fill="white"/>
+<circle cx="261" cy="68" r="23" fill="white"/>
+<circle cx="295" cy="83" r="23" fill="white"/>
+<circle cx="314" cy="78" r="23" fill="white"/>
+<path d="M184.669 93C185.764 90.0026 184.763 84.2237 172 85.0869" stroke="black" stroke-width="0.5"/>
+<path d="M185.331 93C184.236 90.0026 185.237 84.2237 198 85.0869" stroke="black" stroke-width="0.5"/>
+<rect x="382" width="380" height="280" fill="url(#paint1_linear_58_150)"/>
+<path d="M508 35.9453C512.462 35.0918 521.307 35.4332 520.992 43.6263" stroke="black" stroke-width="0.5"/>
+<path d="M534 35.3189C529.538 34.4655 520.693 34.8068 521.008 43" stroke="black" stroke-width="0.5"/>
+<circle cx="429" cy="52" r="23" fill="white"/>
+<circle cx="454" cy="23" r="23" fill="white"/>
+<circle cx="403" cy="46" r="23" fill="white"/>
+<circle cx="418" cy="29" r="23" fill="white"/>
+<circle cx="452" cy="44" r="23" fill="white"/>
+<circle cx="471" cy="39" r="23" fill="white"/>
+<circle cx="652" cy="91" r="23" fill="white"/>
+<circle cx="677" cy="62" r="23" fill="white"/>
+<circle cx="626" cy="85" r="23" fill="white"/>
+<circle cx="641" cy="68" r="23" fill="white"/>
+<circle cx="675" cy="83" r="23" fill="white"/>
+<circle cx="694" cy="78" r="23" fill="white"/>
+<path d="M564.669 93C565.764 90.0026 564.763 84.2237 552 85.0869" stroke="black" stroke-width="0.5"/>
+<path d="M565.331 93C564.236 90.0026 565.237 84.2237 578 85.0869" stroke="black" stroke-width="0.5"/>
+<defs>
+<linearGradient id="paint0_linear_58_150" x1="192" y1="0" x2="192" y2="280" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFFDFD"/>
+<stop offset="1" stop-color="#0057FF" stop-opacity="0.67"/>
+</linearGradient>
+<linearGradient id="paint1_linear_58_150" x1="572" y1="0" x2="572" y2="280" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFFDFD"/>
+<stop offset="1" stop-color="#0057FF" stop-opacity="0.67"/>
+</linearGradient>
+</defs>
+</svg>

@@ -53,7 +53,7 @@
         }
         section ul li.brand{
             position: absolute;
-            top: 171px;
+            top: 173px;
             left: 115px;
         }
         section ul li.refer{
@@ -83,7 +83,7 @@
             left: 12px;
             top: 309px;
             border: 3px solid #FFD500;
-            background: black;
+            background: #ffd50044;
             box-sizing: border-box;
             border-radius: 10px;
         }
@@ -148,7 +148,7 @@
             background-size: contain;
         }
         nav.controls button:hover{
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         nav.controls button.btnStop{
             background: url(images/vehicle/btn-stop.svg) no-repeat center;
@@ -165,6 +165,41 @@
         nav.controls button.btnForward{
             background: url(images/vehicle/btn-forward.svg) no-repeat center;
             background-size: contain;
+        }
+        section img{
+            object-fit: contain;
+            top: 515px;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 80px;
+            position: absolute;
+            width: 220px;
+            z-index: 9;
+        }
+        
+        figure.landscape div{
+            position: absolute;
+            height: 280px;
+            width: 380px;
+            border-radius: 10px;
+            
+        }
+        figure.landscape div.layer03{
+            background: url(images/vehicle/day01.svg) repeat-x;
+            animation: animLayers 20s linear infinite;
+        }
+        figure.landscape div.layer02{
+            background: url(images/vehicle/day02.svg) repeat-x;
+            animation: animLayers 10s linear infinite;
+        }
+        figure.landscape div.layer01{
+            background: url(images/vehicle/day03.svg) repeat-x;
+            animation: animLayers 5s linear infinite;
+        }
+        @keyframes animLayers {
+            0% {background-position: 0px;}
+            100% {background-position: -760px;}
         }
     </style>
 </head>
@@ -187,7 +222,10 @@
                 <li class="color"></li>
             </ul>
             <figure class="landscape">
-            </figure>
+                <div class="layer03"></div>
+                <div class="layer02"></div>
+                <div class="layer01"></div>
+            </figure><img src="" class="image">
             <nav class="changeVehicle">
                 <button class="prev">Prev</button>
                 <button class="next">Next</button>
@@ -202,32 +240,41 @@
         </section>
     </main>
     <script>
+        // Variables
+        var cindex = 0
         // Elements
         const main = document.querySelector('main')
+        // Buttons
         const btnDarkMode = document.querySelector('button.btnDarkMode')
-            
+        const btnPrev     = document.querySelector('button.prev')
+        const btnNext     = document.querySelector('button.next') 
             //Attributes
         const brand = document.querySelector('li.brand')
         const refer = document.querySelector('li.refer')
         const model = document.querySelector('li.model')
         const color = document.querySelector('li.color')
+        const image = document.querySelector('img.image')
         
         const vehicle = {
             attributes:[
-                { brand: 'Chevrolet', refer: 'Camaro', model: 2023, color: 'white', image: ''},
-                { brand: 'Hyundai', refer: 'Tucson', model: 2018, color: 'black', image: ''},
-                { brand: 'Renault', refer: 'Sandero', model: 2012, color: 'red', image: ''},
-                { brand: 'Ford', refer: 'Mustang', model: 2020, color: 'grey', image: ''},
+                { brand: 'Chevrolet', refer: 'Camaro',  model: 2023, color: 'Yellow', image: 'images/vehicle/car01.png'},
+                { brand: 'Hyundai',   refer: 'Tucson',  model: 2018, color: 'Silver', image: 'images/vehicle/car02.png'},
+                { brand: 'Renault',   refer: 'Sandero', model: 2012, color: 'Red',   image: 'images/vehicle/car03.png'},
+                { brand: 'Ford',      refer: 'Mustang', model: 2020, color: 'Red',  image: 'images/vehicle/car04.png'},
         ],
         //Methods
-        showAttributes: function(){
-            brand.innerText = this.attributes[0].brand
-            refer.innerText = this.attributes[0].refer
-            model.innerText = this.attributes[0].model
-            color.innerText = this.attributes[0].color
+        showAttributes: function(index){
+            brand.innerText = this.attributes[index].brand
+            refer.innerText = this.attributes[index].refer
+            model.innerText = this.attributes[index].model
+            color.innerText = this.attributes[index].color
+            image.setAttribute('src', this.attributes[index].image)
         },
         darkMode: function(){
             main.classList.toggle('darkmode')
+        },
+        next: function(showAttributes){
+            main.classList.toggle('next')
         },
         start: function(){
             alert('Start')
@@ -246,10 +293,22 @@
         }
     }
     // - - -
-    vehicle.showAttributes()
+    vehicle.showAttributes(0)
     // Actions
     btnDarkMode.onclick = () => {
         vehicle.darkMode()
+    }
+    btnNext.onclick = () => {
+        if(cindex < vehicle.attributes.length-1){
+            cindex++
+            vehicle.showAttributes(cindex)
+        }
+    }
+    btnPrev.onclick = () => {
+        if(cindex > 0){
+            cindex--
+            vehicle.showAttributes(cindex)
+        }
     }
     </script>
 </body>
