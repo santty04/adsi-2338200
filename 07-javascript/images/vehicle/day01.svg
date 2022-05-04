@@ -1,44 +1,50 @@
-<svg width="762" height="280" viewBox="0 0 762 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="2" width="380" height="280" fill="url(#paint0_linear_58_150)"/>
-<path d="M128 35.9453C132.462 35.0918 141.307 35.4332 140.992 43.6263" stroke="black" stroke-width="0.5"/>
-<path d="M154 35.3189C149.538 34.4655 140.693 34.8068 141.008 43" stroke="black" stroke-width="0.5"/>
-<circle cx="49" cy="52" r="23" fill="white"/>
-<circle cx="74" cy="23" r="23" fill="white"/>
-<circle cx="23" cy="46" r="23" fill="white"/>
-<circle cx="38" cy="29" r="23" fill="white"/>
-<circle cx="72" cy="44" r="23" fill="white"/>
-<circle cx="91" cy="39" r="23" fill="white"/>
-<circle cx="272" cy="91" r="23" fill="white"/>
-<circle cx="297" cy="62" r="23" fill="white"/>
-<circle cx="246" cy="85" r="23" fill="white"/>
-<circle cx="261" cy="68" r="23" fill="white"/>
-<circle cx="295" cy="83" r="23" fill="white"/>
-<circle cx="314" cy="78" r="23" fill="white"/>
-<path d="M184.669 93C185.764 90.0026 184.763 84.2237 172 85.0869" stroke="black" stroke-width="0.5"/>
-<path d="M185.331 93C184.236 90.0026 185.237 84.2237 198 85.0869" stroke="black" stroke-width="0.5"/>
-<rect x="382" width="380" height="280" fill="url(#paint1_linear_58_150)"/>
-<path d="M508 35.9453C512.462 35.0918 521.307 35.4332 520.992 43.6263" stroke="black" stroke-width="0.5"/>
-<path d="M534 35.3189C529.538 34.4655 520.693 34.8068 521.008 43" stroke="black" stroke-width="0.5"/>
-<circle cx="429" cy="52" r="23" fill="white"/>
-<circle cx="454" cy="23" r="23" fill="white"/>
-<circle cx="403" cy="46" r="23" fill="white"/>
-<circle cx="418" cy="29" r="23" fill="white"/>
-<circle cx="452" cy="44" r="23" fill="white"/>
-<circle cx="471" cy="39" r="23" fill="white"/>
-<circle cx="652" cy="91" r="23" fill="white"/>
-<circle cx="677" cy="62" r="23" fill="white"/>
-<circle cx="626" cy="85" r="23" fill="white"/>
-<circle cx="641" cy="68" r="23" fill="white"/>
-<circle cx="675" cy="83" r="23" fill="white"/>
-<circle cx="694" cy="78" r="23" fill="white"/>
-<path d="M564.669 93C565.764 90.0026 564.763 84.2237 552 85.0869" stroke="black" stroke-width="0.5"/>
-<path d="M565.331 93C564.236 90.0026 565.237 84.2237 578 85.0869" stroke="black" stroke-width="0.5"/>
+<svg width="760" height="280" viewBox="0 0 760 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="380" height="280" fill="url(#paint0_linear_65_2)"/>
+<path d="M126 35.9453C130.462 35.0918 139.307 35.4332 138.992 43.6263" stroke="black" stroke-width="0.5"/>
+<path d="M152 35.3189C147.538 34.4655 138.693 34.8068 139.008 43" stroke="black" stroke-width="0.5"/>
+<circle cx="47" cy="52" r="23" fill="white"/>
+<circle cx="72" cy="23" r="23" fill="white"/>
+<circle cx="24" cy="46" r="23" fill="white"/>
+<circle cx="36" cy="29" r="23" fill="white"/>
+<circle cx="70" cy="44" r="23" fill="white"/>
+<circle cx="89" cy="39" r="23" fill="white"/>
+<circle cx="270" cy="91" r="23" fill="white"/>
+<circle cx="295" cy="62" r="23" fill="white"/>
+<circle cx="244" cy="85" r="23" fill="white"/>
+<circle cx="259" cy="68" r="23" fill="white"/>
+<circle cx="293" cy="83" r="23" fill="white"/>
+<circle cx="312" cy="78" r="23" fill="white"/>
+<path d="M182.669 93C183.764 90.0026 182.763 84.2237 170 85.0869" stroke="black" stroke-width="0.5"/>
+<path d="M183.331 93C182.236 90.0026 183.237 84.2237 196 85.0869" stroke="black" stroke-width="0.5"/>
+<rect x="380" width="380" height="280" fill="url(#paint1_linear_65_2)"/>
+<path d="M506 35.9453C510.462 35.0918 519.307 35.4332 518.992 43.6263" stroke="black" stroke-width="0.5"/>
+<path d="M532 35.3189C527.538 34.4655 518.693 34.8068 519.008 43" stroke="black" stroke-width="0.5"/>
+<path d="M710 54.5182C716.521 53.1314 729.448 53.6861 728.988 67" stroke="black" stroke-width="0.5"/>
+<path d="M749 53.5182C742.136 52.1314 728.528 52.6861 729.013 66" stroke="black" stroke-width="0.5"/>
+<path d="M272 29.9453C276.462 29.0918 285.307 29.4332 284.992 37.6263" stroke="black" stroke-width="0.5"/>
+<path d="M298 29.3189C293.538 28.4655 284.693 28.8068 285.008 37" stroke="black" stroke-width="0.5"/>
+<path d="M416 90.3986C422.864 89.3318 436.472 89.7586 435.987 100" stroke="black" stroke-width="0.5"/>
+<path d="M455 89.3986C448.479 88.3318 435.552 88.7586 436.012 99" stroke="black" stroke-width="0.5"/>
+<circle cx="427" cy="52" r="23" fill="white"/>
+<circle cx="452" cy="23" r="23" fill="white"/>
+<circle cx="401" cy="46" r="23" fill="white"/>
+<circle cx="416" cy="29" r="23" fill="white"/>
+<circle cx="450" cy="44" r="23" fill="white"/>
+<circle cx="469" cy="39" r="23" fill="white"/>
+<circle cx="650" cy="91" r="23" fill="white"/>
+<circle cx="675" cy="62" r="23" fill="white"/>
+<circle cx="624" cy="85" r="23" fill="white"/>
+<circle cx="639" cy="68" r="23" fill="white"/>
+<circle cx="673" cy="83" r="23" fill="white"/>
+<circle cx="692" cy="78" r="23" fill="white"/>
+<path d="M562.669 93C563.764 90.0026 562.763 84.2237 550 85.0869" stroke="black" stroke-width="0.5"/>
+<path d="M563.331 93C562.236 90.0026 563.237 84.2237 576 85.0869" stroke="black" stroke-width="0.5"/>
 <defs>
-<linearGradient id="paint0_linear_58_150" x1="192" y1="0" x2="192" y2="280" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_65_2" x1="190" y1="0" x2="190" y2="280" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFFDFD"/>
 <stop offset="1" stop-color="#0057FF" stop-opacity="0.67"/>
 </linearGradient>
-<linearGradient id="paint1_linear_58_150" x1="572" y1="0" x2="572" y2="280" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_65_2" x1="570" y1="0" x2="570" y2="280" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FFFDFD"/>
 <stop offset="1" stop-color="#0057FF" stop-opacity="0.67"/>
 </linearGradient>

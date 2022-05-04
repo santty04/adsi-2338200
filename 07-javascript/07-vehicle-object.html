@@ -177,6 +177,14 @@
             width: 220px;
             z-index: 9;
         }
+        /*Animation Vehicle (On/Start)*/
+        section img.start {
+            animation: animStartEngine 0.2s ease infinite;
+        }
+        @keyframes animStartEngine {
+            0%   { top: 515px; }
+            100% { top: 514px; }
+        }
         
         figure.landscape div{
             position: absolute;
@@ -185,17 +193,54 @@
             border-radius: 10px;
             
         }
+        /*Move Parallax*/
+        figure.landscape.move div.layer03{
+            animation: animLayers 20s linear infinite;
+        }
+        figure.landscape.move div.layer02{
+            animation: animLayers 10s linear infinite;
+        }
+        figure.landscape.move div.layer01{
+            animation: animLayers 5s linear infinite;
+        }
+        /*--------*/
+        /*Stop Parallax*/
+        figure.landscape.stop div.layer03,
+        figure.landscape.stop div.layer02,
+        figure.landscape.stop div.layer01{
+            animation-play-state: paused;
+        }
+
+        /*-----*/
+        /* Reverse Parallax */
+        figure.landscape.reverse div.layer03,
+        figure.landscape.reverse div.layer02,
+        figure.landscape.reverse div.layer01{
+            animation-direction: reverse;
+        }
+        /*-------*/
+        
         figure.landscape div.layer03{
             background: url(images/vehicle/day01.svg) repeat-x;
-            animation: animLayers 20s linear infinite;
         }
         figure.landscape div.layer02{
             background: url(images/vehicle/day02.svg) repeat-x;
-            animation: animLayers 10s linear infinite;
         }
         figure.landscape div.layer01{
             background: url(images/vehicle/day03.svg) repeat-x;
-            animation: animLayers 5s linear infinite;
+        }
+        /*DarkMode Parllax*/
+        
+        main.darkmode figure.landscape div.layer03{
+            background: url(images/vehicle/night01.svg) repeat-x;
+            
+        }
+        main.darkmode figure.landscape div.layer02{
+            background: url(images/vehicle/night02.svg) repeat-x;
+            
+        }
+        main.darkmode figure.landscape div.layer01{
+            background: url(images/vehicle/night03.svg) repeat-x;
         }
         @keyframes animLayers {
             0% {background-position: 0px;}
@@ -242,12 +287,21 @@
     <script>
         // Variables
         var cindex = 0
+        // Booleans
+        var engine = false 
+        var move   = false
         // Elements
         const main = document.querySelector('main')
+        const fland = document.querySelector('figure.landscape')
         // Buttons
         const btnDarkMode = document.querySelector('button.btnDarkMode')
         const btnPrev     = document.querySelector('button.prev')
         const btnNext     = document.querySelector('button.next') 
+        const btnStart    = document.querySelector('button.btnPlay')
+        const btnTurnOff  = document.querySelector('button.btnStop')
+        const btnForward  = document.querySelector('button.btnForward')
+        const btnStop     = document.querySelector('button.btnPause')
+        const btnBackward = document.querySelector('button.btnBackward')
             //Attributes
         const brand = document.querySelector('li.brand')
         const refer = document.querySelector('li.refer')
@@ -277,20 +331,39 @@
             main.classList.toggle('next')
         },
         start: function(){
-            alert('Start')
+            if (!engine){
+                image.classList.add('start')
+                engine = true
+            }
         },
         forWard: function(){
-            alert('ForWard')
+            if (engine && !move){
+                move = true
+                fland.classList.add('move')
+                fland.classList.remove('stop')
+            }
         },
         stop: function(){
-            alert('Stop')
+            if (engine && move) {
+                fland.classList.add('stop')
+                fland.classList.remove('reverse')
+                move = false
+            }
         },
         backWard: function(){
-            alert('BackWard')
+            if (engine && !move) {
+                fland.classList.remove('stop')
+                fland.classList.add('reverse')
+                move = true
+            }
         },
         turnOff: function(){
-            alert('Turn off')
+            if(engine && !move){
+                image.classList.remove('start')
+                engine = false
+            }
         }
+        
     }
     // - - -
     vehicle.showAttributes(0)
@@ -298,17 +371,32 @@
     btnDarkMode.onclick = () => {
         vehicle.darkMode()
     }
+    btnTurnOff.onclick = () => {
+        vehicle.turnOff()
+    }
     btnNext.onclick = () => {
         if(cindex < vehicle.attributes.length-1){
             cindex++
             vehicle.showAttributes(cindex)
         }
     }
+    btnStart.onclick = () => {
+        vehicle.start()
+    }
     btnPrev.onclick = () => {
         if(cindex > 0){
             cindex--
             vehicle.showAttributes(cindex)
         }
+    }
+    btnForward.onclick = () => {
+        vehicle.forWard()
+    }
+    btnStop.onclick = () => {
+        vehicle.stop()
+    }
+    btnBackward.onclick = () => {
+        vehicle.backWard()
     }
     </script>
 </body>
