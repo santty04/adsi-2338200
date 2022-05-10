@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Calculator</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        header h1{
+            font-size: 2.1rem;
+            line-height: 3.8rem;
+        }
+        div.calculator {
+            margin: 40px auto;
+            width: 379px;
+        }
+        header.display {
+            background: url(images/calc/display.svg) no-repeat center;
+            width: 379px;
+            height: 69px;
+        }
+        header.display input.value{
+            border: 0;
+            background: none;
+            outline: none;
+            color: #fff;
+            font-size: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-style: normal;
+            position: absolute;
+            text-align: right;
+            right: 10px;
+            top: 20px;
+            width: 22rem;
+        }
+        section.buttons{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            justify-content: center;
+            row-gap: 10px;
+            column-gap: 33px;
+            margin: 10px 0;
+        }
+        section.buttons button{
+            height: 71px;
+            width: 71px;
+            cursor: pointer;
+            border: none;
+            transition: 0.2s ease-in;
+        }
+        section.buttons button:hover{
+            transform: scale(1.1);
+        }
+        section.buttons button.btn-clear{
+            background: url(images/calc/btn-clear.svg) no-repeat center;
+            border: none;
+        }
+        section.buttons button.btn-back{
+            background: url(images/calc/btn-back.svg) no-repeat center;
+
+        }
+        section.buttons button.btn-exp{
+            background: url(images/calc/btn-exp.svg) no-repeat center;
+
+        }
+        section.buttons button.btn-mod{
+            background: url(images/calc/btn-mod.svg) no-repeat center;
+
+        }
+        section.buttons button.btn-1{
+            background: url(images/calc/btn-1.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-2{
+            background: url(images/calc/btn-2.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-3{
+            background: url(images/calc/btn-3.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-multiplication{
+            background: url(images/calc/btn-multiplication.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-4{
+            background: url(images/calc/btn-4.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-clear{
+            background: url(images/calc/btn-clear.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-5{
+            background: url(images/calc/btn-5.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-6{
+            background: url(images/calc/btn-6.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-rest{
+            background: url(images/calc/btn-rest.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-7{
+            background: url(images/calc/btn-7.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-8{
+            background: url(images/calc/btn-8.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-9{
+            background: url(images/calc/btn-9.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-sum{
+            background: url(images/calc/btn-sum.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-div{
+            background: url(images/calc/btn-div.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-0{
+            background: url(images/calc/btn-0.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-point{
+            background: url(images/calc/btn-point.svg) no-repeat center;
+            background-size: contain;
+        }
+        section.buttons button.btn-iqual{
+            background: url(images/calc/btn-iqual.svg) no-repeat center;
+            background-size: contain;
+        }
+
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Challenge Calculator</h1>
+        </header>
+        <section>
+            <div class="calculator">
+                <header class="display">
+                     <input type="text" class="value" readonly>
+                </header>
+                <section class="buttons">
+                    <button class="btn-clear"></button>
+                    <button class="btn-back"></button>
+                    <button class="btn-exp"></button>
+                    <button class="btn-mod"></button>
+                    <button class="btn-1"></button>
+                    <button class="btn-2"></button>
+                    <button class="btn-3"></button>
+                    <button class="btn-multiplication"></button>
+                    <button class="btn-4"></button>
+                    <button class="btn-5"></button>
+                    <button class="btn-6"></button>
+                    <button class="btn-rest"></button>
+                    <button class="btn-7"></button>
+                    <button class="btn-8"></button>
+                    <button class="btn-9"></button>
+                    <button class="btn-sum"></button>
+                    <button class="btn-div"></button>
+                    <button class="btn-0"></button>
+                    <button class="btn-point"></button>
+                    <button class="btn-iqual"></button>
+                </section>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Value in Display
+        const disValue = document.querySelector('input.value')
+        
+        // Buttons
+        const btnClear = document.querySelector('button.btn-clear')
+        const btnBack = document.querySelector('button.btn-back')
+        const btnExp = document.querySelector('button.btn-exp')
+        const btnMod = document.querySelector('button.btn-mod')
+        const btn1 = document.querySelector('button.btn-1')
+        const btn2 = document.querySelector('button.btn-2')
+        const btn3 = document.querySelector('button.btn-3')
+        const btn4 = document.querySelector('button.btn-4')
+        const btn5 = document.querySelector('button.btn-5')
+        const btn6 = document.querySelector('button.btn-6')
+        const btn7 = document.querySelector('button.btn-7')
+        const btn8 = document.querySelector('button.btn-8')
+        const btn9 = document.querySelector('button.btn-9')
+        const btn0 = document.querySelector('button.btn-0')
+        const btnMultiplication = document.querySelector('button.btn-multiplication')
+        const btnRest = document.querySelector('button.btn-rest')
+        const btnSum = document.querySelector('button.btn-sum')
+        const btnDiv = document.querySelector('button.btn-div')
+        const btnPoint = document.querySelector('button.btn-point')
+        const btnIqual = document.querySelector('button.btn-Iqual')
+
+        // Actions
+        btn1.onclick = () => {
+            if(validateLength()){
+                disValue.value += '1'
+            }
+        }
+        btn2.onclick = () => {
+            if(validateLength()){
+                disValue.value += '2'
+            }
+        }
+        btn3.onclick = () => {
+            if(validateLength()){
+                disValue.value += '3'
+            }
+        }
+        btn4.onclick = () => {
+            if(validateLength()){
+                disValue.value += '4'
+            }
+        }
+        btn5.onclick = () => {
+            if(validateLength()){
+                disValue.value += '5'
+            }
+        }
+        btn6.onclick = () => {
+            if(validateLength()){
+                disValue.value += '6'
+            }
+        }
+        btn7.onclick = () => {
+            if(validateLength()){
+                disValue.value += '7'
+            }
+        }
+        btn8.onclick = () => {
+            if(validateLength()){
+                disValue.value += '8'
+            }
+        }
+        btn9.onclick = () => {
+            if(validateLength()){
+                disValue.value += '9'
+            }
+        }
+        btn0.onclick = () => {
+            if(validateLength()){
+                disValue.value += '0'
+            }
+        }
+
+        btnClear.onclick = () => {
+            disValue.value = ''
+        }
+
+        // Functions
+        function validateLength() {
+            if(disValue.value.length < 38){
+                return true
+            }else{
+                return false
+            }
+        }
+
+    </script>
+</body>
+</html>
