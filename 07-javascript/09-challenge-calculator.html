@@ -7,6 +7,10 @@
     <title>Challenge Calculator</title>
     <link rel="stylesheet" href="css/menu.css">
     <style>
+        main{
+            background-color: black;
+            height: 650px;
+        }
         header h1{
             font-size: 2.1rem;
             line-height: 3.8rem;
@@ -33,6 +37,8 @@
             right: 10px;
             top: 20px;
             width: 22rem;
+            text
+
         }
         section.buttons{
             display: grid;
@@ -158,23 +164,23 @@
                 <section class="buttons">
                     <button class="btn-clear"></button>
                     <button class="btn-back"></button>
-                    <button class="btn-exp"></button>
-                    <button class="btn-mod"></button>
-                    <button class="btn-1"></button>
-                    <button class="btn-2"></button>
-                    <button class="btn-3"></button>
-                    <button class="btn-multiplication"></button>
-                    <button class="btn-4"></button>
-                    <button class="btn-5"></button>
-                    <button class="btn-6"></button>
-                    <button class="btn-rest"></button>
-                    <button class="btn-7"></button>
-                    <button class="btn-8"></button>
-                    <button class="btn-9"></button>
-                    <button class="btn-sum"></button>
-                    <button class="btn-div"></button>
-                    <button class="btn-0"></button>
-                    <button class="btn-point"></button>
+                    <button class="btn-exp"             data-opr="^"></button>
+                    <button class="btn-mod"             data-opr="%"></button>
+                    <button class="btn-1"               data-num="1"></button>
+                    <button class="btn-2"               data-num="2"></button>
+                    <button class="btn-3"               data-num="3"></button>
+                    <button class="btn-multiplication"  data-opr="*"></button>
+                    <button class="btn-4"               data-num="4"></button>
+                    <button class="btn-5"               data-num="5"></button>
+                    <button class="btn-6"               data-num="6"></button>
+                    <button class="btn-rest"            data-opr="-"></button>
+                    <button class="btn-7"               data-num="7"></button>
+                    <button class="btn-8"               data-num="8"></button>
+                    <button class="btn-9"               data-num="9"></button>
+                    <button class="btn-sum"             data-opr="+"></button>
+                    <button class="btn-div"             data-opr="/"></button>
+                    <button class="btn-0"               data-num="0"></button>
+                    <button class="btn-point"           data-opr="."></button>
                     <button class="btn-iqual"></button>
                 </section>
             </div>
@@ -182,89 +188,158 @@
     </main>
     <script>
         // Value in Display
-        const disValue = document.querySelector('input.value')
+        const display = document.querySelector('input.value')
         
         // Buttons
         const btnClear = document.querySelector('button.btn-clear')
         const btnBack = document.querySelector('button.btn-back')
-        const btnExp = document.querySelector('button.btn-exp')
-        const btnMod = document.querySelector('button.btn-mod')
-        const btn1 = document.querySelector('button.btn-1')
-        const btn2 = document.querySelector('button.btn-2')
-        const btn3 = document.querySelector('button.btn-3')
-        const btn4 = document.querySelector('button.btn-4')
-        const btn5 = document.querySelector('button.btn-5')
-        const btn6 = document.querySelector('button.btn-6')
-        const btn7 = document.querySelector('button.btn-7')
-        const btn8 = document.querySelector('button.btn-8')
-        const btn9 = document.querySelector('button.btn-9')
-        const btn0 = document.querySelector('button.btn-0')
-        const btnMultiplication = document.querySelector('button.btn-multiplication')
-        const btnRest = document.querySelector('button.btn-rest')
-        const btnSum = document.querySelector('button.btn-sum')
-        const btnDiv = document.querySelector('button.btn-div')
-        const btnPoint = document.querySelector('button.btn-point')
         const btnIqual = document.querySelector('button.btn-Iqual')
 
+        // All number & operators
+        const btnsNumbers = document.querySelectorAll('button[data-num]')
+        const btnsOperators = document.querySelectorAll('button[data-opr]')
+
+        //Logic Value
+        var operStatus = false
+
+
+        // Activate Click Event In All Numbers & Operators
+        for (let i = 0; i < btnsNumbers.length; i++) {
+            btnsNumbers[i].onclick = function() {
+                operStatus = true
+                addToDisplay(this.getAttribute('data-num'))
+            }
+            
+        }
+
+        for (let i = 0; i < btnsOperators.length; i++) {
+            btnsOperators[i].onclick = function() {
+                if(operStatus){
+                    addToDisplay(this.getAttribute('data-opr'))
+                    operStatus = false
+                }
+                
+            }
+            
+        }
+
         // Actions
-        btn1.onclick = () => {
-            if(validateLength()){
-                disValue.value += '1'
+        document.onkeyup = (evt) => {
+            // 0 - 9 = 96, 97, 98, 99, 100, 101, 102, 103, 104, 105
+            switch (evt.keyCode) {
+                case 8: 
+                    deleteLastValue()
+                    break;
+                case 46: 
+                    clearDisplay()
+                    break;
+                case 96:
+                case 48:
+                    addToDisplay(0)
+                    break;
+                case 97:
+                case 49:
+                    addToDisplay(1)
+                    break;
+                case 98:
+                case 50:
+                    addToDisplay(2)
+                    break;
+                case 99:
+                case 51:
+                    addToDisplay(3)
+                    break;
+                case 100:
+                case 52:
+                    addToDisplay(4)
+                    break;
+                case 101:
+                case 53:
+                    if (evt.shiftKey) {
+                        addToDisplay('%')
+                    }else{
+                    addToDisplay(5)
+                    }
+                    break;
+                case 102:
+                case 54:
+                    addToDisplay(6)
+                    break;
+                case 103:
+                case 55:
+                    if(evt.shiftKey){
+                        addToDisplay('/')
+                    }else{
+                    addToDisplay(7)
+                    }
+                    break;
+                case 111: 
+                    addToDisplay('/')
+                    break;
+                case 104:
+                case 56:
+                    addToDisplay(8)
+                    break;
+                case 105:
+                case 57:
+                    addToDisplay(9)
+                    break;
+                case 106:
+                    addToDisplay('*')
+                    break;
+                case 187: 
+                case 107:
+                    if(evt.shiftKey){
+                        addToDisplay('*')
+                    } else{
+                        addToDisplay('+')
+                    }
+                    break;
+                case 190:
+                    addToDisplay('.')
+                    break;
+                
+                default:
+                    break;
+                case 222:
+                    if (evt.ctrlKey && evt.altKey) {
+                        addToDisplay('^')
+                    }
+                    break;
+                case 189: 
+                case 109:
+                    addToDisplay('-')
+                    break;
             }
-        }
-        btn2.onclick = () => {
-            if(validateLength()){
-                disValue.value += '2'
-            }
-        }
-        btn3.onclick = () => {
-            if(validateLength()){
-                disValue.value += '3'
-            }
-        }
-        btn4.onclick = () => {
-            if(validateLength()){
-                disValue.value += '4'
-            }
-        }
-        btn5.onclick = () => {
-            if(validateLength()){
-                disValue.value += '5'
-            }
-        }
-        btn6.onclick = () => {
-            if(validateLength()){
-                disValue.value += '6'
-            }
-        }
-        btn7.onclick = () => {
-            if(validateLength()){
-                disValue.value += '7'
-            }
-        }
-        btn8.onclick = () => {
-            if(validateLength()){
-                disValue.value += '8'
-            }
-        }
-        btn9.onclick = () => {
-            if(validateLength()){
-                disValue.value += '9'
-            }
-        }
-        btn0.onclick = () => {
-            if(validateLength()){
-                disValue.value += '0'
-            }
-        }
 
+        }
         btnClear.onclick = () => {
-            disValue.value = ''
+            clearDisplay()
         }
-
+        btnBack.onclick = () => {
+            deleteLastValue()
+        }
         // Functions
+        function deleteLastValue(){
+            display.value = display.value.slice(0, -1)
+            if (isNaN(display.value.slice(-1))){
+                operStatus = false
+            } else {
+                operStatus = true
+            }
+        }
+        function clearDisplay(){
+            display.value = ''
+            operStatus = false
+        }
+    
+        function addToDisplay(c) {
+            if(validateLength()){
+                display.value +=c 
+            }
+        }
         function validateLength() {
-            if(disValue.value.length < 38){
+            if(display.value.length < 35){
                 return true
             }else{
                 return false
