@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        table.operators{
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 480px;
+            font-size: 1rem;
+        }
+        table thead th{
+            background-color: #ffd50066;
+            color: #333;
+        }
+        table th, 
+        table td {
+            border: 2px solid #000;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        table tbody td:first-child{
+            font-size: 1rem;
+            text-align: center;
+        }
+        table thead input{
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Source Sans Pro';
+            padding: 8px;
+             width: 120px;
+        }
+        table tbody tr:nth-child(even) td{
+            background-color: #fff9;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Assignment</h1>
+        </header>
+        <section>
+            <table class="operators">
+                <thead>
+                <tr>
+                    <th colspan="4">
+                        <input type="number" placeholder="Y Value">
+                    </th>
+                </tr>
+                <tr>
+                    <th>Operator</th>
+                    <th>Example</th>       
+                    <th>Equal</th>
+                    <th>Result</th>         
+                </tr>
+                
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>=</td>
+                        <td>x=y</td>
+                        <td class="eq"></td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>+=</td>
+                        <td>x+=y</td>
+                        <td class="eq">x=x+y</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>-=</td>
+                        <td>x-=y</td>
+                        <td class="eq">x=x-y</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>x*=y</td>
+                        <td class="eq">x=x*y</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>/</td>
+                        <td>x/=y</td>
+                        <td class="eq">x=x/y</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>x%=y</td>
+                        <td class="eq">x=x%y</td>
+                        <td class="rs"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        // results
+        const eq = document.querySelectorAll('td.eq')
+        const rs = document.querySelectorAll('td.rs')
+        const input = document.querySelector('input')
+        // events
+        input.oninput = () => {
+        if (input.value != ''){
+            if(input.value.length<5){
+            // =
+            eq[0].innerText = 'x=' + input.value 
+            rs[0].innerText = parseInt(input.value)
+            // +=
+            rs[1].innerText = 10 + parseInt(input.value)
+            // -=
+            rs[2].innerText = 10 - parseInt(input.value)
+            // *=
+            rs[3].innerText = 10 * parseInt(input.value)
+            // /= 
+            rs[4].innerText = 10 / parseInt(input.value)
+            // %=
+            rs[5].innerText = 10 % parseInt(input.value)
+            
+        }else{
+            input.value = input.value.slice(0,-1)
+        }
+        }else{
+            for (let i = 0; i < ry.length; i++) {
+                rs[i].innerText = ''
+                
+            }
+        }
+        }
+    </script>
+</body>
+</html>

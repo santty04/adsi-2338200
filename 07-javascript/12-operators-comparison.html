@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        table.operators{
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 480px;
+            font-size: 1rem;
+        }
+        table thead th{
+            background-color: #ffd50066;
+            color: #333;
+        }
+        table th, 
+        table td {
+            border: 2px solid #000;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        table tbody td:first-child{
+            font-size: 1rem;
+            text-align: center;
+        }
+        table thead input{
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Source Sans Pro';
+            padding: 8px;
+             width: 120px;
+        }
+        table tbody tr:nth-child(even) td{
+            background-color: #fff9;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Comparison</h1>
+        </header>
+        <section>
+            <table class="operators">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <input type="number" placeholder="X Value">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Comparison</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>==</td>
+                        <td>Is Equal</td>
+                        <td>x==8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>Equal (value & type)</td>
+                        <td>x===5</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Diferent</td>
+                        <td>x!=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>Diff (value & type)</td>
+                        <td>x!==5</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>Greater than</td>
+                        <td>x>8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>Less than</td>
+                        <td>x<8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>Greater or Equal</td>
+                        <td>x>=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>>=</td>
+                        <td>Less or Equal</td>
+                        <td>x<=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        // results
+        const rss   = document.querySelectorAll('td.rs')
+        const input = document.querySelector('input')
+        // Events
+        input.oninput = () => {
+            if (input.value != '') {
+                if (input.value.length < 4) {
+                    // ==
+                    rss[0].innerText = (parseInt(input.value) == 8)
+                    // ===
+                    rss[1].innerText = (parseInt(input.value) === 5)
+                    // !=
+                    rss[2].innerText = (parseInt(input.value) != 8)
+                    // !==
+                    rss[3].innerText = (parseInt(input.value) !== 5)
+                    // >
+                    rss[4].innerText = (parseInt(input.value) > 8)
+                    // <
+                    rss[5].innerText = (parseInt(input.value) < 8)
+                    // >=
+                    rss[6].innerText = (parseInt(input.value) >= 8)
+                    // <=
+                    rss[7].innerText = (parseInt(input.value) <= 8)
+                } else {
+                    input.value = input.value.slice(0,-1)
+                }
+            } else {
+                for (let i = 0; i < rss.length; i++) {
+                    rss[i].innerText = ''
+                }
+            }
+        }
+    </script>
+</body>
+</html>

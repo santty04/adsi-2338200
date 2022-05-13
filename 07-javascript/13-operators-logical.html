@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu JS</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        table.operators{
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 480px;
+            font-size: 1rem;
+        }
+        table thead th{
+            background-color: #ffd50066;
+            color: #333;
+        }
+        table th, 
+        table td {
+            border: 2px solid #000;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        table tbody td:first-child{
+            font-size: 1rem;
+            text-align: center;
+        }
+        table thead input{
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            font-family: 'Source Sans Pro';
+            padding: 8px;
+             width: 120px;
+        }
+        table tbody tr:nth-child(even) td{
+            background-color: #fff9;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Logical</h1>
+        </header>
+        <section>
+            <table class="operators">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <input type="number" placeholder="X Value">
+                            <input type="number" placeholder="Y Value">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&&</td>
+                        <td>AND</td>
+                        <td>(x<10 && y>1)</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>||</td>
+                        <td>OR</td>
+                        <td>(x==5 || y==5)</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>!</td>
+                        <td>NOT</td>
+                        <td>!(x==y)</td>
+                        <td class="rs"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script>
+        // results
+        const rss   = document.querySelectorAll('td.rs')
+        const input = document.querySelectorAll('input')
+        // Events
+        input[0].oninput = () => {
+            if (input[0].value != '' && input[1].value != '') {
+                if (input[0].value.length < 4) {
+                    // &&
+                    rss[0].innerText = (parseInt(input[0].value) < 10 && 
+                                        parseInt(input[1].value) > 1)
+                    // ||
+                    rss[1].innerText = (parseInt(input[0].value) == 5 ||
+                                        parseInt(input[1].value) == 5)
+                    // !
+                    rss[2].innerText = !(parseInt(input[0].value) ==
+                                        parseInt(input[1].value))
+     
+                } else {
+                    input[0].value = input[0].value.slice(0,-1)
+                }
+            } else {
+                for (let i = 0; i < rss.length; i++) {
+                    rss[i].innerText = ''
+                }
+            }
+        }
+        input[1].oninput = () => {
+            if (input[0].value != '' && input[1].value != '') {
+                if (input[1].value.length < 4) {
+                    // &&
+                    rss[0].innerText = (parseInt(input[0].value) < 10 && 
+                                        parseInt(input[1].value) > 1)
+                    // ||
+                    rss[1].innerText = (parseInt(input[0].value) == 5 ||
+                                        parseInt(input[1].value) == 5)
+                    // !
+                    rss[2].innerText = !(parseInt(input[0].value) ==
+                                        parseInt(input[1].value))
+     
+                } else {
+                    input[1].value = input[1].value.slice(0,-1)
+                }
+            } else {
+                for (let i = 0; i < rss.length; i++) {
+                    rss[i].innerText = ''
+                }
+            }
+        }
+    </script>
+</body>
+</html>
