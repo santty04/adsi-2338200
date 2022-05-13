@@ -138,7 +138,7 @@
             background: url(images/calc/btn-point.svg) no-repeat center;
             background-size: contain;
         }
-        section.buttons button.btn-iqual{
+        section.buttons button.btn-Iqual{
             background: url(images/calc/btn-iqual.svg) no-repeat center;
             background-size: contain;
         }
@@ -181,7 +181,7 @@
                     <button class="btn-div"             data-opr="/"></button>
                     <button class="btn-0"               data-num="0"></button>
                     <button class="btn-point"           data-opr="."></button>
-                    <button class="btn-iqual"></button>
+                    <button class="btn-Iqual"></button>
                 </section>
             </div>
         </section>
@@ -284,6 +284,9 @@
                 case 57:
                     addToDisplay(9)
                     break;
+                case 67:
+                    clearDisplay()
+                    break;
                 case 106:
                     addToDisplay('*')
                     break;
@@ -296,6 +299,7 @@
                     }
                     break;
                 case 190:
+                case 110:
                     addToDisplay('.')
                     break;
                 
@@ -310,6 +314,10 @@
                 case 109:
                     addToDisplay('-')
                     break;
+                case 13: 
+                    btnIqual.onclick()
+                    break;
+                
             }
 
         }
@@ -319,6 +327,15 @@
         btnBack.onclick = () => {
             deleteLastValue()
         }
+        btnIqual.onclick = () => {
+            var operation = display.value;
+            if (operation.trim() != '') {
+                operation = operation.replace('^', '**');
+                operation = eval(operation)
+                display.value = operation
+            }
+        }
+
         // Functions
         function deleteLastValue(){
             display.value = display.value.slice(0, -1)
