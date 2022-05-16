@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Conditional</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        main{
+            background: url(images/conditional/cond-1.svg) no-repeat center;
+            height: 800px;
+            width: 493px;
+            border: none;
+        }
+        a svg{
+            display: none;
+        }
+        input.name{
+            border: none;
+            top: 35.2rem;
+            left: 310px;
+            position: absolute;
+        }
+
+        nav button.person{
+            position: relative;
+        }
+       
+        nav button.female{
+            background: url(images/conditional/btn-female.svg) no-repeat center;
+            border: none;
+            height: 140px;
+            width: 149.38px;
+            top: 19rem;
+            left: 19rem;
+            position: absolute;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        nav button.female:hover{
+            transform: translateX(-20px) scale(1.1);
+        }
+        nav button.male{
+            background: url(images/conditional/btn-male.svg) no-repeat center;
+            position: absolute;
+            height: 140px;
+            width: 149.38px;
+            left: 33rem;
+            top: 19rem;
+            transition: 0.2s ease-out;
+            border: none;
+        }
+        nav button.male:hover{
+            transform: translateX(20px) scale(1.1);
+        }
+        nav button.verify{
+            background: url(images/conditional/btn-verify.svg) no-repeat center;
+            height: 46px;
+            width: 188px;
+            border: none;
+            position: absolute;
+            top: 49rem;
+            transition: 0.2s ease-in;
+            cursor: pointer;
+        }
+        nav button.verify:hover{
+            transform: rotateX(360deg) scale(1.1);
+        }
+        h1{
+            border-bottom: none;
+        }
+        h2{
+            border-bottom: none;
+        }
+        input.name{
+            background-color: transparent;
+            left: 90px;
+            top: 19rem;
+            position: relative;
+        }
+        input.date{
+            background-color: transparent;
+            border: none;
+            top: 25rem;
+            left: -6rem;
+            position: relative;
+        }
+        h3{
+            color: #000;
+        }
+        h3.birthday{
+            border: none;
+            position: relative;
+            top: 24.5rem;
+            left: -10rem;
+        }
+        h3.name{
+            border: none;
+            position: absolute;
+            top: 34.5rem;
+            
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+        </header>
+        <h1>Welcome to consultation <br> for war</h1>
+        <h2>Choose your gender:</h2>
+        <h3 class="birthday">Birthday:</h3>
+        <h3 class="name">Name:</h3>
+        <section>
+            <input type="text" class="name" placeholder="Juan Estrada">
+            <input type="date" class="date">
+            <nav class="person">
+                <button class="female"></button>
+                <button class="male"></button>
+            </nav>
+            <nav class="verify">
+                <button class="verify"></button>
+            </nav>
+        </section>
+    </main>
+    <script>
+
+    </script>
+</body>
+</html>
