@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex-api</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<style>
+/* css menu init */
+
+    section#content {
+        display: grid;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+    }
+    div {
+        margin: 0 auto;
+    }
+    div.title-pokedex{
+        height: auto;
+        display: flex;
+
+    }
+    div.title-pokedex p.title-init {
+        display: flex;
+        background: url(images/images-pokedex/title.svg)no-repeat;
+        background-position: center center;
+        height: 40px;
+        margin: 0 auto;
+        width: 420px;
+        justify-content: center;
+    }
+    .banner {
+        width: 100%;
+        height: 200px;
+        display: flex;
+    }
+    .banner img {
+        margin: 0 auto;
+    }
+    .pokemons {
+        overflow: hidden;
+        justify-content: center;
+        width: auto;
+        height: 280px;
+    }
+    .pokemons {
+        height: 260px;
+        width: 420px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pokemons div {
+        z-index: 0;
+        width: 147px;
+        height: 147px;
+
+    }
+    .pokemons .chikorita {
+        position: relative;
+        z-index: 1;
+        background: url(images/images-pokedex/menu-init/chikorita-menu.svg)no-repeat;
+        animation: chikorita 10s 1.5s infinite normal forwards;
+    }
+    .pokemons .cyndaquil{
+        position: relative;
+        z-index: 2;
+        background: url(images/images-pokedex/menu-init/cyndaquil-menu.svg);
+        animation: cyndaquil 10s 1.5s infinite normal forwards;
+    }
+    .pokemons .totodile{
+        position: relative;
+        z-index: 3;
+        background: url(images/images-pokedex/menu-init/totodile-menu.svg);
+        transform: translatey(-60px);
+        animation: totodile 10s 1.5s infinite normal forwards;
+    }
+    .end{
+        display: flex;
+        width: 100%;
+        height: 100px;
+    }
+    .end button{
+        border: none;
+        margin: 0 auto;
+        width: 180px;
+        height: 70px;
+        justify-content: center;
+        background: url(images/images-pokedex/menu-init/btn-enter.svg)no-repeat center;
+    }
+    .end button:hover {
+        transform: scale(1.1);
+    }
+    @keyframes totodile {
+        0%{
+            transform: scale(1.2);
+        }
+        33%{
+            z-index: 2;
+            transform: translate(105px,-150px);
+        }
+        66%{
+            z-index: 1;
+            transform: translate(-110px,-150px);
+
+        }
+    }
+    @keyframes chikorita {
+        33%{
+            transform: translate(105px,90px);
+            z-index: 3;
+        }
+        66%{
+            transform: translate(210px,-6px);
+            z-index: 2;
+        }
+    }
+    @keyframes cyndaquil {
+        33%{
+            z-index: 1;
+            transform: translate(-213px);
+        }
+        66%{
+            z-index: 3;
+            transform: translate(-105px,90px);
+
+        }
+    }
+
+    /* css menu nav*/
+    
+    div.navTitle {
+        background: url(images/images-pokedex/title.svg)no-repeat;
+        background-position: center;
+        width: 420px;
+        height: 40px;
+    }
+    div.navMenu {
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 50px;
+        width: 400px;
+        height: 580px;
+        overflow: auto;
+    }
+    div.card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 25px;
+        width: 95%;
+        height: 150px;
+        background-color: #464646;
+    }
+    .card div.info-content{
+        margin: 16px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .card div.info-content p{
+        color: #968B8B;
+        justify-content: space-between;
+        margin: 0 auto;
+        border-radius: 10px;
+        width: auto;
+    }
+    .card div.info-content p.normal,
+    .card div.info-content p.none{
+        background-color: #ffffff;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.grass{
+        background-color: #7DFFB1;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.water{
+        background-color: #1833ad;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.fire{
+        background-color: #960505;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.flying{
+        background-color: #05637a;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.poison{
+        background-color: #670c9c;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.bug{
+        background-color: #647a15;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.psychic{
+        background-color: #571849;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.rock{
+        background-color: #4e5300;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.dark {
+        background-color: #440d69;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.drake {
+        background-color: #ac631e;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.ghost {
+        background-color: #29005f;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.steel {
+        color: black;
+        background-color: #a1a1a1;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.fairy {
+        background-color: #a31166;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.ice {
+        background-color: #89b8ff;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.fighting {
+        background-color: #4e1414;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.electric {
+        background-color: #d4d116;
+        width: 60px;
+        text-align: center;
+    }
+    .card div.info-content p.ground {
+        background-color: #53441b;
+        width: 60px;
+        text-align: center;
+    }
+
+    .card div.info-reference{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+    .card div.info-reference p{
+        color: #968B8B;
+    }
+    .card div.info-reference img {
+        background-color: white;
+        margin-bottom: 10px;
+        width: 65px;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    ::-webkit-scrollbar {
+  width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(201, 201, 201, 0.411);
+      border-radius: 10px;
+      border: 0.5px rgb(78, 78, 78) solid;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(247, 236, 236);
+      border-radius: 10px;
+      border-radius: black solid 0.5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      border-radius: 10px;
+      background: rgb(148, 148, 148);
+      border-radius: black solid 0.5px;
+    }
+    /* css menu stats */
+    main.stats section{ 
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+    main.bug {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-bug.svg);
+    }
+    main.dark {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-dark.svg);
+    }
+    main.drake {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-drake.svg);
+    }
+    main.earth {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-earth.svg);
+    }
+    main.electric {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-electric.svg);
+    }
+    main.fayrie {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fayrie.svg);
+    }
+    main.figthing {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fighting.svg);
+    }
+    main.fire {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fire.svg);
+    }
+    main.ghost {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-ghost.svg);
+    }
+    main.grass {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-grass.svg);
+    }
+    main.ice {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-ice.svg);
+    }
+    main.normal {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-normal.svg);
+    }
+    main.poison {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-poison.svg);
+    }
+    main.psychic {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-psychic.svg);
+    }
+    main.rock {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-rock.svg);
+    }
+    main.steel {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-steel.svg);
+    }
+    main.water {
+        background: url(images/images-pokedex/menu-statsPok/bg-type-water.svg);
+    }
+    div.headerStats{
+        height: 135px;
+        width: 420px;
+    }
+    div.headerStats h1 {
+        text-align: center;
+    }
+    div.img{
+        background-color: white;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        width: 250px;
+    }
+    div.img img {
+        margin-top: 15px;
+        height: 200px;
+        width: 200px;
+    }
+    div.statics {
+        height: 300px;
+        width: 420px;
+    }
+    div.statics p {
+        margin-left: 5px;
+        width: 400px;
+    }
+    progress {
+        height: 5px;
+        width: 330px;
+    }
+    table{
+        display: flex;
+        margin: 0 auto;
+        width: 400px;
+        height: 200px;
+    }
+    button.back {
+        transform: translate(10px, 50px);
+    }
+    button.back:hover {
+        transform: translate(10px, 50px),scale(1.1);
+    }
+    
+</style>
+<body>
+    <!-- main.init main.nav STATS had multiply bg -->
+    <main id="etMain" > 
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
+            <h1></h1>
+        </header>
+        <section id="content">
+           
+        </section>
+        </nav>
+    </main>
+
+
+    <template id="menuInit">
+
+        <div class="title-pokedex">
+            <p class="title-init"></p>
+        </div>
+        <div class="banner">
+            <img src="images/images-pokedex/menu-init/bannerPokLegendary.svg" alt="">
+        </div>
+        <div class="pokemons">
+            <div class="chikorita"></div>
+            <div class="cyndaquil"></div>
+            <div class="totodile"></div>
+        </div>
+        <div class="end">
+            <button class="submit"></button>
+        </div>
+    </template>
+    <template id="menuNav">
+        <div class="navTitle"></div>
+        <div class="navMenu">
+
+        </div>
+    </template>
+    <template id="cardE">
+        <div class="card">
+            <div class="info-content">
+                <p class="name"></p>
+                <p class="type1"></p>
+                <p class="type2"></p>
+            </div>
+            <div class="info-reference">
+                <p class="idCard">hola</p>
+                <img class="pokemonNav" src="" alt="">
+            </div>
+        </div>
+    </template>
+    <template id="menuStats">
+        <div class="headerStats">
+            <button class="back">⬅</button>
+            <h1 class="name"></h1>
+            <h2 class="id">#</h2>
+        </div>
+        <div class="img">
+            <img src="" alt="">
+        </div>
+        <div class="statics">
+            <p>PokeStats</p>
+            <table>
+                <tr>
+                    <th>hp</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress hp" value="0"></progress></td>
+                </tr>
+                <tr>
+                    <th>attack</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress attack" value="0"></progress></td>
+                </tr>
+                <tr>
+                    <th>defense</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress defense" value="0"></progress></td>
+                </tr>
+                <tr>
+                    <th>sAtk</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress special-attack" value="0"></progress></td>
+                </tr>
+                <tr>
+                    <th>sDef</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress special-defense" value="0"></progress></td>
+                </tr>
+                <tr>
+                    <th>speed</th>
+                    <td class="valspe"></td>
+                    <td><progress max="255" class="progress speed" value="0"></progress></td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+
+
+
+    <script>
+        //execution
+        document.addEventListener('DOMContentLoaded',() => {
+                printMenu()
+                InitMenuNav()
+        }
+        ) 
+        //constants & variable
+        const sectionWork= document.querySelector('section#content')
+        const etqMain= document.querySelector('#etMain')
+        
+        
+        //menu initial
+        const templateInit = document.querySelector('template#menuInit').content
+        var cloneMenuInit = templateInit.cloneNode(true)
+        const btnSubmit = cloneMenuInit.querySelector('.submit')
+        
+        //menu nav
+        const templateNav = document.querySelector('template#menuNav').content
+        var cloneMenuNav = templateNav.cloneNode(true)
+        const cardExample= document.querySelector('#cardE').content
+        let menu = cloneMenuNav.querySelector('div.navMenu')
+        //menu stats
+        const templateStats = document.querySelector('template#menuStats').content
+        var cloneMenuStats = templateStats.cloneNode(true)
+        const btnBack = cloneMenuStats.querySelector('button.back')
+
+        const fragment = document.createDocumentFragment()
+        
+        //functions
+        const fetchDataNav = async (numero) => {
+            try {
+                var res = await fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
+                var data = await res.json()
+                printCard(data)  
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const printMenu = () => {
+            fragment.appendChild(cloneMenuInit)
+            sectionWork.appendChild(fragment)
+            etqMain.classList.add('init')
+        }
+        const printCard = (pokemon) => {
+            let data = pokemon
+            let cloneCard= cardExample.cloneNode(true)
+            let name = cloneCard.querySelector('.name')
+            name.innerHTML= `${data.name}:`
+            let type1 = cloneCard.querySelector('.type1')
+            type1.innerHTML= data.types[0].type.name
+            type1.classList.add(`${data.types[0].type.name}`)
+            let type2 = cloneCard.querySelector('.type2')
+            if (data.types[1] != undefined){
+                type2.innerHTML= data.types[1].type.name     
+                type2.classList.add(`${data.types[1].type.name}`)
+
+            }
+            else {
+                type2.innerHTML = `none`
+                type2.classList.add(`none`)
+            }
+
+            let idPok = cloneCard.querySelector('.idCard')
+            idPok.innerHTML = `#${data.id}`
+            let imgPok = cloneCard.querySelector('.pokemonNav')
+            imgPok.setAttribute('src', data.sprites.front_default)
+            imgPok.classList.add(`${data.id}`)
+
+            menu.appendChild(cloneCard)
+            if(data.id == 251){
+                addClickEvents()
+            }
+               
+        }
+        const printNav= () => {
+            fragment.appendChild(cloneMenuNav)
+            sectionWork.appendChild(fragment)
+            etqMain.classList.add('nav')
+        }
+        const printNavDef = () => {
+            for (let i = 152; i <= 251; i++) {
+                fetchDataNav(i)
+                if (i == 251){
+                    printNav() 
+                }
+            }
+        }
+        const printStatus= () => {
+            fragment.appendChild(cloneMenuStats)
+            sectionWork.appendChild(fragment)
+            
+        }
+        const editMenuStats = async(numero)=>{
+            var res = await fetch(`https://pokeapi.co/api/v2/pokemon/${numero}`)
+            var data = await res.json()
+            let name = document.querySelector('h1.name')
+            let id = document.querySelector('h2.id')
+            let image = document.querySelector('div.img img')
+            let barrasProgres = document.querySelectorAll('progress.progress')
+            // nombre de la clase console.log(barrasProgres[0].classList[1])
+            barrasProgres.forEach(element => {
+                switch (element.classList[1]) {
+                    
+                    case 'hp':
+                        let hpStat = document.querySelector('.hp')
+                        hpStat.setAttribute('value', data.stats[0].base_stat) 
+                        break;
+                    case 'attack':
+                        let atkStat = document.querySelector('.attack')
+                        atkStat.setAttribute('value', data.stats[1].base_stat) 
+                        
+                        break;
+                    case 'defense':
+                        let defStat = document.querySelector('.defense')
+                        defStat.setAttribute('value', data.stats[2].base_stat) 
+                        
+                        break;
+                    case 'special-attack':
+                        let satkStat = document.querySelector('.special-attack')
+                        satkStat.setAttribute('value', data.stats[3].base_stat) 
+                        
+                        break;
+                    case 'special-defense':
+                        let spcdefstat = document.querySelector('.special-defense')
+                        spcdefstat.setAttribute('value', data.stats[4].base_stat) 
+                        
+                        break;
+                    case 'speed':
+                        let spdStat = document.querySelector('.speed')
+                        spdStat.setAttribute('value', data.stats[5].base_stat) 
+                        
+                        break;
+
+                    default:
+                        console.log('no funciono')
+                        break;
+                }
+
+            });
+            let typePok = data.types[0].type.name
+            switch (typePok) {
+                case 'bug':
+                    etqMain.classList.add('bug')
+                    break;
+                case 'dark':
+                    etqMain.classList.add('dark')
+                    break;
+                case 'dragon':
+                    etqMain.classList.add('drake')
+                    break;
+                case 'earth':
+                    etqMain.classList.add('earth')
+                    break;
+                case 'electric':
+                    etqMain.classList.add('electric')
+                    break;
+                case 'fairy':
+                    etqMain.classList.add('fayrie')
+                    break;
+                case 'fighting':
+                    etqMain.classList.add('figthing')
+                    break;
+                case 'fire':
+                    etqMain.classList.add('fire')
+                    break;
+                case 'ghost':
+                    etqMain.classList.add('ghost')
+                    break;
+                case 'grass':
+                    etqMain.classList.add('grass')
+                    break;
+                case 'ice':
+                    etqMain.classList.add('ice')
+                    break;
+                case 'normal':
+                    etqMain.classList.add('normal')
+                    break;
+                case 'poison':
+                    etqMain.classList.add('poison')
+                    break;
+                case 'psychic':
+                    etqMain.classList.add('psychic')
+                    break;
+                case 'ground':
+                    etqMain.classList.add('rock')
+                    break;
+                case 'steel':
+                    etqMain.classList.add('steel')
+                    break;
+                case 'water':
+                    etqMain.classList.add('water')
+                    break;             
+                default:
+                    break;
+            }
+
+            console.log(data)
+            name.innerHTML=`${data.name}`
+            id.innerHTML = `#${data.id}`
+            image.setAttribute('src', data.sprites.other.dream_world.front_default)
+        }
+        
+        const resetDOM=()=>{
+            sectionWork.innerHTML=""
+            let arrayClass = etqMain.classList
+            if(etqMain.classList == ""){
+                console.log('ey esto ya esta vacio')
+            }
+            else {
+                arrayClass.forEach(element => {
+                etqMain.classList.remove(`${element}`)
+                });
+            }
+            
+        }
+        const addClickEvents =()=>{
+            let cards= document.querySelectorAll('div.card')
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].addEventListener('click',(e) => {
+                    let classID= e.target.classList
+                    console.log(classID[1])
+                    if(e.target.classList.contains('pokemonNav')){
+                        resetDOM()
+                        printStatus()
+                        editMenuStats(classID[1])
+                        
+                    }
+                })
+            }
+        }
+        const InitMenuNav =()=>{
+            btnSubmit.onclick=function(){
+                resetDOM()
+                printNavDef()
+            }
+            btnBack.onclick=()=>{
+            // resetDOM()
+            // printNavDef()
+            location.reload()
+        }
+        }
+        const secondMenuNav=()=>{
+            printNavDef()
+        }
+
+    </script>
+</body>
+</html>
