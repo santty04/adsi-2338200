@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Strings</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        textarea,
+        input{
+            border-radius: 10px;
+            padding: 10px;
+            border: #aa0 2px solid;
+        }
+        textarea{
+            font-size: 1rem;
+            color: #aa0;
+            font-family: 'Poppins';
+            display: flex;
+            height: 80px;
+            margin: 0px auto;
+            width: 360px;
+        }
+        div.options{
+            display: grid;
+            grid-template-columns: 1fr 20px 1fr;
+            width: 360px;
+            gap: 4px;
+            margin: 10px auto;
+            align-items: center;
+        }
+        div.options label:last-of-type{
+            text-align: right;
+        }
+        button.btn-show{
+            display: flex;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid #aa0;
+            font-family: 'Poppins';
+            font-size: 1rem;
+            background-color: rgb(55, 61, 53);
+            color: #fff;
+            transition: 0.2s ease;
+            cursor: pointer;
+            font-style: italic;
+        }
+        button.btn-show:hover{
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Methods Strings</h1>
+        </header>
+        <section>
+            <textarea class="textarea" name="textarea" cols="30" rows="10" placeholder="Write a sentence..."></textarea>
+            <div class="options">
+                <label> <input type="radio" name="transform" class="r-low">lowercase </label>
+                <span>or</span>
+                <label> <input type="radio" name="transform" class="r-upp">UPPERCASE </label>
+                <input type="text" class="word-origin" placeholder="Current">
+                <span>for</span>
+                <input type="text" class="word-replace" placeholder="Replace">
+                <input type="text" class="pos-start" placeholder="Origin position">
+                <span>to</span>
+                <input type="text" class="pos-final" placeholder="Replace position">
+                
+            </div>
+            <button class="btn-show">Show String</button>
+            <ul class="result"></ul>
+        </section>
+    </main>
+    <script>
+        //Elements
+        const textarea = document.querySelector('.textarea')
+        const r_low = document.querySelector('.r-low')
+        const r_upp = document.querySelector('.r-upp')
+        const word_origin = document.querySelector('.word-origin')
+        const word_replace = document.querySelector('.word-replace')
+        const pos_start = document.querySelector('.pos-start')
+        const pos_final = document.querySelector('.pos-final')
+        const btn_show = document.querySelector('.btn-show')
+        const result = document.querySelector('.result')
+        //Variables
+        var upper = false 
+        //Events
+        r_low.onclick = function() { upper = false }
+        r_upp.onclick = function() { upper = true }
+        btn_show.onclick = function() {
+            if (textarea.value.length > 0){
+            result.innerHTML = '<li><strong> Original String:</strong> ' + textarea.value + '</li>'
+            result.innerHTML += '<li><strong> Length String:</strong> ' + textarea.value.length + ' characters</li>'
+            if (upper){
+                result.innerHTML += '<li><strong>Uppercase:</strong> ' + textarea.value.toUpperCase()+ ' </li>'
+            } else{
+                result.innerHTML += '<li><strong>Uppercase:</strong> ' + textarea.value.toLowerCase()+ ' </li>'
+            }
+            }
+            result.innerHTML += '<li><strong>Replacement String:</strong> ' + textarea.value.replace(word_origin.value, word_replace.value) + ' </li>'
+            result.innerHTML += '<li><strong>Cut String:</strong> ' + textarea.value.substring(parseInt (pos_start.value), parseInt(pos_final.value)) + ' </li>'
+
+        }
+    </script>
+</body>
+</html>

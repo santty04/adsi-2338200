@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        section{
+            height: 650px;
+            overflow-y: auto;
+        }
+        div.block{
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 10px 1.4rem 10px;
+        }
+        output{
+            color: #ffd500;
+            font-size: 1.4rem;
+        }
+        select,
+        input,
+        button {
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.8rem;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body onload="welcome()">
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Events</h1>
+        </header>
+        <section>
+            <h2>Page load</h2>
+            <div class="block">
+                <output class="msj-load">Page No load</output>
+            </div>
+            <h2>Double Click</h2>
+            <div class="block">
+                <button class="btn-dbclick">Double click me</button>
+                <output class="nums-dbclicks">0 clicks</output>
+            </div>
+            <h2>Release Key</h2>
+            <div class="block">
+                <input type="text" class="inp-keyup">
+                <output class="msj-keyup">null</output>
+            </div>
+            <h2>Resize Window</h2>
+            <div class="block">
+                <output class="msj-resize">no resize</output>
+            </div>
+            <h2>Change Value</h2>
+            <div class="block">
+                <select class="slt-change">
+                    <option value="" selected disabled>Select color</option>
+                    <option value="#ff000066">Red</option>
+                    <option value="#00ff0066">Green</option>
+                    <option value="#0000ff43">Blue</option>
+                    <option value="#11111199">Reset</option>
+                </select>
+            </div>
+            <h2>Mouse (over/put)</h2>
+            <div class="block">
+                <img src="images/ted.png" class="img-ted">
+            </div>
+
+        </section>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        
+        //Elements
+        const msj_load          =  document.querySelector('.msj-load')
+        const btn_dbclick       =  document.querySelector('.btn-dbclick')
+        const nums_dbclicks     =  document.querySelector('.nums-dbclicks')
+        const inp_keyup         =  document.querySelector('.inp-keyup')
+        const msj_keyup         =  document.querySelector('.msj-keyup')
+        const msj_resize        =  document.querySelector('.msj-resize')
+        const main_bg           =  document.querySelector('main')
+        const slt_change        =  document.querySelector('.slt-change')
+        const img_ted           = document.querySelector('.img-ted')
+        // variables
+        var contdbclicks = 0
+        //events
+        btn_dbclick.ondblclick = () => {
+            contdbclicks++
+            nums_dbclicks.textContent = contdbclicks + ' clicks'
+        }
+        inp_keyup.onkeyup = function() {
+            if(this.value.length < 8){
+                msj_keyup.value = this.value
+            }
+            if(this.value.length == 0){
+                msj_keyup.value = 'null'
+            }
+        }
+        slt_change.onchange = function() {
+            main_bg.style.backgroundColor = this.value
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'The color was changed',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        window.onresize = function() {
+            msj_resize.innerText = 'Window widht: ' + window.outerWidth + 'px \n' + 'Window height ' + window.outerHeight + 'px' 
+        }
+        img_ted.onmouseover = function() {
+            this.src = 'images/ted1.png'
+        }
+        img_ted.onmouseout = function() {
+            this.src = 'images/ted.png'
+        }
+        //Functions
+        function welcome(){
+            Swal.fire('The page is load')
+            msj_load.textContent = 'The page was load'
+        }
+    </script>
+    
+</body>
+</html>

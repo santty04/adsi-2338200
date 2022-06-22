@@ -9,13 +9,7 @@
 </head>
 <style>
 /* css menu init */
-    main{
-        border: none;
-        background: url(images/pokedex/bg-pokedex.png);
-    }
-    h1{
-        border: none;
-    }
+
     section#content {
         display: grid;
         margin: 0 auto;
@@ -30,7 +24,7 @@
         display: flex;
 
     }
-    /* div.title-pokedex p.title-init {
+    div.title-pokedex p.title-init {
         display: flex;
         background: url(images/images-pokedex/title.svg)no-repeat;
         background-position: center center;
@@ -38,7 +32,7 @@
         margin: 0 auto;
         width: 420px;
         justify-content: center;
-    } */
+    }
     .banner {
         width: 100%;
         height: 200px;
@@ -74,13 +68,13 @@
     .pokemons .cyndaquil{
         position: relative;
         z-index: 2;
-        background: url(images/images-pokedex/menu-init/cyndaquil-menu.svg) no-repeat;
+        background: url(images/images-pokedex/menu-init/cyndaquil-menu.svg);
         animation: cyndaquil 10s 1.5s infinite normal forwards;
     }
     .pokemons .totodile{
         position: relative;
         z-index: 3;
-        background: url(images/images-pokedex/menu-init/totodile-menu.svg) no-repeat;
+        background: url(images/images-pokedex/menu-init/totodile-menu.svg);
         transform: translatey(-60px);
         animation: totodile 10s 1.5s infinite normal forwards;
     }
@@ -88,19 +82,14 @@
         display: flex;
         width: 100%;
         height: 100px;
-        top: 750px;
-        left: 0px;
-        position: absolute;
     }
     .end button{
         border: none;
         margin: 0 auto;
-        width: 395px;
-        height: 140px;
+        width: 180px;
+        height: 70px;
         justify-content: center;
-        background: url(images/pokedex/btn-enter.png)no-repeat center;
-        transition: 0.2s ease;
-        cursor: pointer;
+        background: url(images/images-pokedex/menu-init/btn-enter.svg)no-repeat center;
     }
     .end button:hover {
         transform: scale(1.1);
@@ -143,16 +132,13 @@
 
     /* css menu nav*/
     
-    /* div.navTitle {
+    div.navTitle {
         background: url(images/images-pokedex/title.svg)no-repeat;
         background-position: center;
         width: 420px;
         height: 40px;
-    } */
+    }
     div.navMenu {
-        top: 80px;
-        left: 0px;
-        position: relative;
         margin: 10px auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -165,10 +151,10 @@
     div.card {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        border-radius: 10px;
+        border-radius: 25px;
         width: 95%;
         height: 150px;
-        background-color: #195AAB;
+        background-color: #464646;
     }
     .card div.info-content{
         margin: 16px auto;
@@ -320,89 +306,55 @@
         margin: 0 auto;
     }
     main.bug {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-bug.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-bug.svg);
     }
     main.dark {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-dark.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-dark.svg);
     }
     main.drake {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-drake.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-drake.svg);
     }
     main.earth {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-earth.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-earth.svg);
     }
     main.electric {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-electric.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-electric.svg);
     }
     main.fayrie {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-fayrie.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fayrie.svg);
     }
     main.figthing {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-fighting.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fighting.svg);
     }
     main.fire {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-fire.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-fire.svg);
     }
     main.ghost {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-ghost.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-ghost.svg);
     }
     main.grass {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-grass.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-grass.svg);
     }
     main.ice {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-ice.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-ice.svg);
     }
     main.normal {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-normal.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-normal.svg);
     }
     main.poison {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-poison.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-poison.svg);
     }
     main.psychic {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-psychic.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-psychic.svg);
     }
     main.rock {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-rock.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-rock.svg);
     }
     main.steel {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-steel.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-steel.svg);
     }
     main.water {
-        background: url(images/images-pokedex/menu-statsPok/bg-type-water.svg) no-repeat center;
-        background-size: contain;
-        width: 500px;
+        background: url(images/images-pokedex/menu-statsPok/bg-type-water.svg);
     }
     div.headerStats{
         height: 135px;
@@ -448,16 +400,17 @@
     button.back:hover {
         transform: translate(10px, 50px),scale(1.1);
     }
-    main.nav {
-        background: url(images/pokedex/bg-enter.png) no-repeat center;
-    }
     
 </style>
 <body>
     <!-- main.init main.nav STATS had multiply bg -->
     <main id="etMain" > 
         <header>
-            
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+            </a>
             <h1></h1>
         </header>
         <section id="content">
@@ -472,14 +425,14 @@
         <div class="title-pokedex">
             <p class="title-init"></p>
         </div>
-        <!-- <div class="banner">
+        <div class="banner">
             <img src="images/images-pokedex/menu-init/bannerPokLegendary.svg" alt="">
-        </div> -->
-        <!-- <div class="pokemons">
+        </div>
+        <div class="pokemons">
             <div class="chikorita"></div>
             <div class="cyndaquil"></div>
             <div class="totodile"></div>
-        </div> -->
+        </div>
         <div class="end">
             <button class="submit"></button>
         </div>
