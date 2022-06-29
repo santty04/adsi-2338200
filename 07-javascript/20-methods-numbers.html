@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method numbers</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        input{
+            border-radius: 10px;
+            padding: 10px;
+            border: #aa0 2px solid;
+            display: flex;
+            margin: 0 auto;
+        }
+        button.btn-calc{
+            display: flex;
+            margin: 10px auto;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid #aa0;
+            font-family: 'Poppins';
+            font-size: 1rem;
+            background-color: rgb(55, 61, 53);
+            color: #fff;
+            transition: 0.2s ease;
+            cursor: pointer;
+            font-style: italic;
+        }
+        button.btn-calc:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Method numbers</h1>
+        </header>
+        <section>
+            <input type="number" class="numb" placeholder="Enter float number">
+            <button class="btn-calc">Calculate</button>
+            <ul class="output"></ul>
+        </section>
+    </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        //elements
+        const numb = document.querySelector('.numb')
+        const btn_calc = document.querySelector('.btn-calc')
+        const output = document.querySelector('.output')
+
+        //Events
+        
+        btn_calc.addEventListener('click', function() {
+            let vnum = numb.value
+            if (is_float(vnum)) {
+                output.innerHTML = "<li> <b>String: </b>'" + vnum.toString() + "' </li>"
+                output.innerHTML += "<li> <b>Integer: </b>" + parseInt(vnum) + "</li>"
+                output.innerHTML += "<li> <b>Fixed: </b>" + parseFloat(vnum).toFixed(0) + "</li>"
+                output.innerHTML += "<li> <b>Precision: </b>" + parseFloat(vnum).toPrecision(3) + "</li>"
+                output.innerHTML += "<li> <b>Float: </b>" + parseFloat(vnum) + "</li>"
+                
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You must enter a float number (With decimal)',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                })
+            }
+        }
+        )
+        //Functions
+        function is_float(n) {
+            return !!(n % 1)
+        }
+
+    </script>
+    
+</body>
+</html>
