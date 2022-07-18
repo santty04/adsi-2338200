@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloto</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        main{
+            background: url(images/baloto/bg-baloto.png) no-repeat center;
+            width: 493px;
+            height: 800px;
+        }
+        a{
+            top: 30px;
+        }
+        button.play{
+            background: url(images/baloto/btn-play.png);
+            display: flex;
+            width: 283px;
+            height: 83px;
+            border: none;
+            top: 0px;
+            margin: 420px auto;
+            cursor: pointer;
+        }
+        div.arrows{
+            display: flex;
+            flex-direction: block;
+            justify-content: space-between;
+            width: 700px;
+            height: 70px;
+            margin: 220px auto;
+            align-items: center;
+            border: 2px solid red;
+        }
+        button.left{
+            background: url(images/baloto/btn-left.svg) no-repeat;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            border: none;
+        }
+        button.right{
+            background: url(images/baloto/btn-right.svg) no-repeat;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            border: none;
+        }
+        figure.yellowball{
+            background: url(images/baloto/yellowball.png) no-repeat center;
+            height: 80px;
+            width: 80px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            
+        </header>
+        <section>  
+            <div class="arrows">
+                <button class="left"></button>
+                <button class="right"></button>
+                <figure class="yellowball"></figure>
+                <figure class="soccerball"></figure>
+                <figure class="basketball"></figure>
+            </div>
+        </section>
+        <footer>
+            <div class="play">
+                <button class="play"></button>
+            </div>
+        </footer>
+    </main>
+    
+</body>
+</html>
