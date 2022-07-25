@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods arrays</title>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Methods arrays</h1>
+        </header>
+        <section>
+            <ul class="emojis"></ul>
+        </section>
+    </main>
+    <script>
+        //Elements
+        const emojis = document.querySelector('.emojis')
+        // Variables & Constants
+        const list   = ['🐷','🐰','🦓','🐔','🦥']
+        // valueOf
+        emojis.innerHTML = `<li> <b>valueOf:</b> ${list.valueOf()} </li>`
+        // String
+        emojis.innerHTML += `<li> <b>String:</b> ${list.toString()} </li>`
+        // Join
+        emojis.innerHTML += `<li> <b>Join</b> ${list.join('❌')} </li>`
+        // Sort
+        emojis.innerHTML += `<li> <b>Sort</b> ${list.sort()} </li>`
+        // Pop (Delete lastone)
+        list.pop()
+        emojis.innerHTML += `<li> <b>Pop (Delete last one):</b> ${list.valueOf()} </li>`
+        // Shift (Delete the first)
+        list.shift()
+        emojis.innerHTML += `<li> <b>Shift (Delete the first):</b> ${list.valueOf()} </li>`
+        // Push (add last one)
+        list.push('🦔')
+        emojis.innerHTML += `<li> <b>Pop (Delete last one):</b> ${list.valueOf()} </li>`
+        // unshift (Add first one)
+        list.unshift('🦄')
+        emojis.innerHTML += `<li> <b>Pop (Delete last one):</b> ${list.valueOf()} </li>`
+        // Slice (Delete position)
+        let animals = list.slice(0,4)
+        emojis.innerHTML += `<li> <b>Slice (Delete position):</b> ${animals.valueOf()} </li>`
+        // Splice (delete position)
+        emojis.innerHTML += `<li> <b>Splice (Delete Position (3,4)):</b> ${list.splice(3,4)} </li>`
+
+    </script>
+</body>
+</html>
