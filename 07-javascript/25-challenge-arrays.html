@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Arrays</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+</head>
+<style>
+    main{
+        background: url(images/arrrays/bg-array.png) no-repeat;
+        border: none;
+    }
+    a{
+        top: 25px;
+        border: 2px solid white;
+        border-radius: 50px;
+    }
+    section nav.cars{
+        display: grid;
+        grid-template-columns: repeat(2, 167px);
+        justify-content: space-between;
+        width: 400px;
+        height: 200px;
+        margin: 190px auto;
+        overflow: hidden;
+    }
+    section nav.cars div.car {
+        height: 40px;
+        opacity: 0.6;
+        width: 167px;
+        overflow: hidden;
+        overflow-y: hidden;
+
+        transition: all 0.2s ease-in;
+    }
+    section nav.cars div.car:hover{
+        opacity: 1;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    div.cars1{
+        background: url(images/arrrays/car1.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+    div.cars2{
+        background: url(images/arrrays/car2.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+    div.cars3{
+        background: url(images/arrrays/car3.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+    div.cars4{
+        background: url(images/arrrays/car4.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+    div.cars5{
+        background: url(images/arrrays/car5.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+    div.cars6{
+        background: url(images/arrrays/car6.png) no-repeat;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        border: 2px solid white;
+    }
+
+    section nav.options{
+        margin-left: 50px;
+        display: flex;
+        flex-direction: row;
+        height: 31px;
+        border: 2px solid black;
+        overflow: hidden;
+        width: 430px;
+    }
+    section nav.options input[type=checkbox]{
+        -webkit-appearance: none;
+        cursor: pointer;
+        background: url(images/arrrays/position.png) no-repeat center;
+        width: 117px;
+        height: 31px;
+        transition: background 0.2s ease-in;
+    }
+    section nav.options input[type=checkbox].position{
+        background: url(images/arrrays/btn-first.png) no-repeat center;
+    }
+    section nav.options input[type=checkbox].position:checked{
+        background: url(images/arrrays/btn-last.png) no-repeat center;
+    }
+    section nav.options input[type=checkbox].action{
+        background: url(images/arrrays/btn-add.png) no-repeat center;
+    }   
+    section nav.options input[type=checkbox].action:checked{
+        background: url(images/arrrays/btn-remove.png) no-repeat center;
+    }
+
+
+</style>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+
+        </header>
+        <section>
+            <nav class="cars">
+                <div class="car cars1 animate__animated"></div>
+                <div class="car cars2 animate__animated"></div>
+                <div class="car cars3 animate__animated"></div>
+                <div class="car cars4 animate__animated"></div>
+                <div class="car cars5 animate__animated"></div>
+                <div class="car cars6 animate__animated"></div>
+            </nav>
+            <nav class="options">
+                <input type="checkbox" class="position">
+                <input type="checkbox" class="action">
+                <input type="checkbox" class="nposition">
+            </nav>
+        </section>
+    </main>
+    <script>
+        const cars = document.querySelectorAll('.cars')
+        cars.forEach () {
+            cars.forEach(element => {
+                removeAnimation()
+                element.classList.remove('activated', 'animate__flash')
+            })
+        } 
+        function removeAnimation() {
+            cars.forEach(element => {
+                element.classList.remove('activated', 'animate__flash')
+            })
+        }
+    </script>
+</body>
+</html>
