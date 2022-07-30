@@ -207,25 +207,26 @@
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        //Elements
+
         const car          = document.querySelectorAll ('.car')
-        const sw_action     = document.querySelector    ('.action')
         const sw_position   = document.querySelector    ('.position')
+        const sw_action     = document.querySelector    ('.action')
         const btn_action    = document.querySelector    ('.btn')
         const result        = document.querySelector    ('.result')
-        
-        //Global Variable
+
+        var nposition       = document.querySelector    ('.nposition')
         var slt_car        = null
         var slt_position    = 'first'
         var slt_action      = 'add' 
         var array_car      = []
+        var check = true
 
         //
         car.forEach((element, index) => {
             element.addEventListener('click', (e) => {
                 removeAnimation()
                 slt_car = 'car' + (index+1)
-                element.classList.add('actived','animate__pulse')
+                element.classList.add('actived','animate__flash')
             })
         });
 
@@ -233,15 +234,16 @@
 
         function removeAnimation() {
             car.forEach(element => {
-                element.classList.remove('actived','animate__pulse')
+                element.classList.remove('actived','animate__flash')
             })
         }
-
-        sw_action.addEventListener('click', (e) =>{
-            if (sw_action.checked == true){
+        sw_position.addEventListener('click', (e) =>{
+            if (check == false){
                 slt_position = 'first'
+                check = true
             }else{
                 slt_position = 'last'
+                check = false
             }
         })
 
@@ -259,7 +261,6 @@
 
         btn_action.addEventListener('click', (e) =>{
             if(slt_car != null){
-                //Swal.fire(slt_car + ' - ' + slt_position  + ' - ' + slt_action)
                 if(slt_action == 'add'){
                     if(slt_position == 'first'){
                         array_car.unshift(slt_car)
@@ -267,26 +268,21 @@
                         array_car.push(slt_car)
                     }
                 }else{
-                    if(slt_position == 'last'){
+                    if(slt_position == 'first'){
                         array_car.shift()
                     }else{
                         array_car.pop()
                     }
                 }
-                // alert(array_car)
                 result.innerHTML = ''
                 for (let i = 0; i < array_car.length; i++) {
-                    result.innerHTML += '<div class="'+array_car[i]+'"><span>'+i+'</span></div>'
-                    
+                    result.innerHTML += '<div class="animate__flash animate_animated '+array_car[i]+'"><span>'+i+'</span></div>'
                 }
             }else{
-                Swal.fire('Select a car')
+                Swal.fire('Select car')
             }  
         })
         
     </script>
 </body>
-<!-- Agregar al final no sirve, Agrega al principio
-    agregar al
--->
 </html>
