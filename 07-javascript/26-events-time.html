@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events time</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            position: relative;
+        }
+        input, 
+        button {
+            padding: 10px;
+            font-family: Poppins;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #aa0;
+            cursor: pointer;
+        }
+        img.goku{
+            border-radius: 30px;
+            border: 5px solid black;
+            position: absolute;
+            top: 250px;
+            transition: all 0.2s linear;
+        }
+        div.digital{
+            color: #aa0;
+            font-size: 3rem;
+            margin-top: 290px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
+            <h1>Events time</h1>
+        </header>
+        <section>
+            <div class="control">
+                <input type="number" class="count-down" placeholder="Time in seconds">
+                <button class="btn-count">Count Down</button>
+            </div>
+            <div class="control">
+                <input type="number" class="refresh-page" placeholder="Time in seconds">
+                <button class="btn-refresh">Refresh page</button>
+            </div>
+            <h3>Use the right and left arrow keys to move Goku</h3>
+            <img src="images/goku.png" class="goku">
+            <div class="digital"></div>
+        </section>
+    </main>
+    <script>
+        //Elements
+        const count_down    = document.querySelector('.count-down')
+        const refresh_page  = document.querySelector('.refresh-page')
+        const btn_count     = document.querySelector('.btn-count')
+        const btn_refresh   = document.querySelector('.btn-refresh')
+        const goku = document.querySelector('.goku')
+        const digital = document.querySelector('.digital')
+
+        //Events (SetInterval)
+        btn_count.addEventListener('click', (e) =>{
+            if (count_down.value.length > 0) {
+                let count = parseInt(count_down.value)
+                let s_int = setInterval(() => {
+                console.log("hi \n")
+                count--
+                    if (count < 0) {
+                        clearInterval(s_int)
+                        alert('Time is over')
+                    } else {
+                        count_down.value = count 
+                    } 
+                },1000)
+            }else{
+                alert('Please, enter time in seconds')
+            }
+        })
+        // (setTimeout)
+        btn_refresh.addEventListener('click', (e) =>{
+            if(refresh_page.value.length > 0){
+                let refresh = parseInt(refresh_page.value) * 1000
+                let s_tout = setTimeout(() =>{
+                    window.location.replace('26-events-time.html')
+                    // window.location.reload()
+                }, refresh)
+            } else {
+                alert('Please, enter time in seconds')
+            }
+        })
+        // Events Arrow key
+        var lpos = 150
+        var tpos = 230
+        window.addEventListener('keyup', (e) => {
+            console.log(e.keyCode)
+            if(e.keyCode == 37) { //Left
+                
+                if (lpos >= 10){
+                    lpos -= 50
+                    goku.style.left = lpos + 'px'
+                }
+                
+            }
+            if(e.keyCode == 39) { //Right
+                if(lpos <= 300)
+                lpos += 50
+                goku.style.left = lpos + 'px'
+            }
+            if(e.keyCode == 38) { //up
+                
+                if (tpos >= 50){
+                    tpos -= 20
+                    goku.style.top = tpos + 'px'
+                }
+                
+            }
+            if(e.keyCode == 40) { //top
+                
+                if (tpos < 500){
+                    tpos += 20
+                    goku.style.top = tpos + 'px'
+                }
+                
+            }
+        })
+
+        // digital clock
+        setInterval(() => {
+            let currentTime = new Date()
+            let formattedTime = currentTime.toLocaleTimeString()
+            digital.textContent = formattedTime
+        }, 1000)
+
+
+    </script>
+</body>
+</html>
