@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
+    <title>Challenge Arrays</title>
     <link rel="stylesheet" href="css/menu.css">
     <link rel="icon" href="images/JavaScript-logo.ico">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -12,7 +12,6 @@
         main{
             border: none;
             background: url(images/arrrays/bg-array.png) no-repeat center;
-            
         }
         h1{
             border: none;
@@ -23,81 +22,98 @@
         header h1 {
             text-indent: -9999px
         }
-        /*cars*/
-        div.cars{
-
-        }
-
-        div.cars1{
+        /*Food*/
+        div.car1{
             position: relative;
             background: url(images/arrrays/car1.png) no-repeat center;
-            width:167px;
-            height: 41px;
+            width: 167px;
+            height: 40px;
             top: 120px;
             left: 30px;
             cursor: pointer;
+            /* border: 2px solid black; */
         }
-        div.cars2{
+        div.car2{
             position: relative;
             background: url(images/arrrays/car2.png) no-repeat center;
             width: 167px;
-            height: 41px;
-            top: 80px;
+            height: 40px;
+            top: 75px;
             left: 250px;
             cursor: pointer;
+            /* border: 2px solid green; */
         }
-        div.cars3{
+        div.car3{
             position: relative;
             background: url(images/arrrays/car3.png) no-repeat center;
-            width:167px;
-            height: 41px;
+            width: 167px;
+            height: 40px;
             top: 100px;
             left: 30px;
             cursor: pointer;
+            /* border: 2px solid black; */
         }
-        div.cars4{
+        div.car4{
             position: relative;
             background: url(images/arrrays/car4.png) no-repeat center;
-            width:167px;
-            height: 70px;
-            top: 45px;
+            width: 167px;
+            height: 40px;
+            top: 56px;
             left: 250px;
             cursor: pointer;
+            /* border: 2px solid black; */
         }
-        div.cars5{
+        div.car5{
             position: relative;
             background: url(images/arrrays/car5.png) no-repeat center;
-            width:180px;
-            height: 70px;
-            top: 40px;
-            left: 130px;
+            width: 167px;
+            height: 40px;
+            top: 80px;
+            left: 140px;
             cursor: pointer;
+            /* border: 2px solid black; */
         }
-
+        /*Positions*/
+        /*div.positions{
+            position: relative;
+            width: 120px;
+            height: 60px;
+            margin: 20px auto;
+        }
+        div.positions div.add{
+            position: absolute;
+            background: url(images/arrays/add.svg) no-repeat;
+            width: 60px;
+            height: 60px;
+        }
+        div.positions div.delete{
+            position: absolute;
+            background: url(images/arrays/delete.svg) no-repeat;
+            width: 60px;
+            height: 60px;
+            left: 65px;
+        }*/
 
         section nav.options{
-            margin-left: 50px;
+            margin-left: 30px;
+            margin-top: 150px;
             display: flex;
             flex-direction: row;
-            height: 38px;
+            height: 34px;
             overflow: hidden;
-            margin-top: 100px;
-            margin-left: 30px;
         }
 
          section nav.options input[type=checkbox],
          section nav.options input[type=number]{
             -webkit-appearance: none;
             cursor: pointer;
-            color: #EF4130;
             border: none;
             text-align: center;
             outline: none;
             background: url(images/arrrays/position.png) no-repeat center;
-            width: 120px;
-            height: 38px;
+            width: 126px;
+            height: 34px;
             transition: background 0.4s ease-in;
-            
         }
 
         section nav.options input[type=checkbox].position{
@@ -116,7 +132,8 @@
             display: flex;
             margin:  auto;
             margin-top: 10px;
-            border: none;
+            border: 2px solid red;
+            border-radius: 20px;
             width: 40px;
             height: 40px;
             transition: all 0.5s ease-in;
@@ -132,28 +149,31 @@
             background: url(images/arrrays/btn-minus.svg) no-repeat center;
         }
 
+        div.wrapper{
+            overflow-x: scroll;
+            width: 380px;
+        }
+
         section figure.result{
-            display: flex;
+            display: inline-flex;
             flex-direction: row;
+            flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            width: 380px;
             margin: auto;
             gap: 30px;
-            overflow: hidden;
-            height: 81px;
-            border: 2px solid white;
-            margin-top: 100px;
+            height: 31px;
+            margin-top: 80px;
+            /* border: 2px solid black; */
         }
         section figure.result div{
+            background-size: contain !important;
             height: 50px;
-            width: 167px;
-            border: 2px solid white;
+            width: 50px;
+            border-radius: 20px;
         }
         section div.cars1{
             background: url(images/arrrays/car1.png) no-repeat center;
-            background-size: cover;
-            border: 2px solid black;
         }
         section div.cars2{
             background: url(images/arrrays/car2.png) no-repeat center;
@@ -172,7 +192,6 @@
             font-size: 1.3rem;
             padding: 0px;
             border-radius: 30px;
-            
         }
     </style>
 </head>
@@ -187,13 +206,13 @@
             <h1>Example</h1>
         </header>
         <section>
-            <!--Select car-->
-            <div class="cars">
-                <div class="cars1         car animate__animated animate__infinite"></div>
-                <div class="cars2        car animate__animated animate__infinite"></div>
-                <div class="cars3        car animate__animated animate__infinite"></div>
-                <div class="cars4      car animate__animated animate__infinite"></div>
-                <div class="cars5 car animate__animated animate__infinite"></div>
+            <!--Select Car-->
+            <div class="car">
+                <div class="car1         cars animate__animated animate__infinite"></div>
+                <div class="car2        cars animate__animated animate__infinite"></div>
+                <div class="car3        cars animate__animated animate__infinite"></div>
+                <div class="car4      cars animate__animated animate__infinite"></div>
+                <div class="car5 cars animate__animated animate__infinite"></div>
             </div>
             <!--Select Position-->
             <nav class="options">
@@ -201,24 +220,27 @@
                 <input class="action" type="checkbox">
                 <input class="nposition" type="number" placeholder="Positions" min="0" max="99">
             </nav>
-            <button class=" btn btn-add"></button>     
+            <button class=" btn btn-add"></button>   
+            <div class="wrapper">  
             <figure class="result"></figure>
+            </div>
         </section>
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-
-        const car          = document.querySelectorAll ('.car')
+        //Elements
+        const car          = document.querySelectorAll ('.cars')
         const sw_position   = document.querySelector    ('.position')
         const sw_action     = document.querySelector    ('.action')
         const btn_action    = document.querySelector    ('.btn')
         const result        = document.querySelector    ('.result')
-
+        //Global Variable
         var nposition       = document.querySelector    ('.nposition')
         var slt_car        = null
         var slt_position    = 'first'
         var slt_action      = 'add' 
         var array_car      = []
+        //var creada para valorar el estado de slt_position
         var check = true
 
         //
@@ -226,7 +248,7 @@
             element.addEventListener('click', (e) => {
                 removeAnimation()
                 slt_car = 'car' + (index+1)
-                element.classList.add('actived','animate__flash')
+                element.classList.add('actived','animate__pulse')
             })
         });
 
@@ -234,10 +256,12 @@
 
         function removeAnimation() {
             car.forEach(element => {
-                element.classList.remove('actived','animate__flash')
+                element.classList.remove('actived','animate__pulse')
             })
         }
+        //aqui estabam llamando mal elemento no era sw_action sino sw_position
         sw_position.addEventListener('click', (e) =>{
+            //el valor solo ocurria una vez despues siempre devuelve last
             if (check == false){
                 slt_position = 'first'
                 check = true
@@ -261,6 +285,7 @@
 
         btn_action.addEventListener('click', (e) =>{
             if(slt_car != null){
+                //Swal.fire(slt_car + ' - ' + slt_position  + ' - ' + slt_action)
                 if(slt_action == 'add'){
                     if(slt_position == 'first'){
                         array_car.unshift(slt_car)
@@ -276,7 +301,7 @@
                 }
                 result.innerHTML = ''
                 for (let i = 0; i < array_car.length; i++) {
-                    result.innerHTML += '<div class="animate__flash animate_animated '+array_car[i]+'"><span>'+i+'</span></div>'
+                    result.innerHTML += '<div class="animate_bounceInUp animate_animated '+array_car[i]+'"><span>'+i+'</span></div>'
                 }
             }else{
                 Swal.fire('Select car')
