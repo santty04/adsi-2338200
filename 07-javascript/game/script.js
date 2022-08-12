@@ -5,6 +5,14 @@ const round = document.getElementById('round');
 const followButtons = document.getElementsByClassName('box');
 const startButton = document.getElementById('startButton');
 
+// Time
+let mostrarTiempo = document.querySelector('.time')
+let timer = 30
+let timerInicial = timer
+let tiempoRegresivoId = null
+
+
+
 // Class js
 
 class Follow {
@@ -44,6 +52,18 @@ startGame() {
         element.onclick = () => this.buttonClick(i);
     });
     this.showSequence();
+    tiempoRegresivoId = setInterval(()=>{
+        timer--;
+        mostrarTiempo.innerHTML = `Tiempo: ${timer}S`
+        if (timer == 0 ) {
+            clearInterval(tiempoRegresivoId)
+            this.errorSound.play();
+            this.display.startButton.disabled = false;
+            this.blockedButtons = true;
+            alert('Game Over')
+        }
+    },1000);
+    
 }
 
 // Update the round and board
@@ -119,6 +139,7 @@ toggleButtonStyle(button) {
 
 // Update the game when the player lost
 gameLost() {
+    alert('Game Over')
     this.errorSound.play();
     this.display.startButton.disabled = false;
     this.blockedButtons = true;

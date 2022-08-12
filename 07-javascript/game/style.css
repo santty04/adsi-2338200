@@ -13,8 +13,8 @@ body{
 
 .follows{
     position: relative;
-    margin-top: 50px;
-    padding: 30px;
+    margin-top: -30x;
+    padding: 150px;
     border-radius: 5px;
     color: #fff;
 }
@@ -86,4 +86,15 @@ body{
 
 @keyframes spin{
     100% { transform:rotate(180deg) }
+}
+#round{
+    position: relative;
+    width: 100px;
+    top: 25px;
+}
+.time{
+    position: relative;
+    left: 220px;
+    top: 25px;
+    width: 100px;
 }
