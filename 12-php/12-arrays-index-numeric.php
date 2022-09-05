@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Hello World" ?> </title>
+    <title> <?="Arrays Numeric" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Hello World</a>
+          <a class="nav-link active" aria-current="page" href="#">12 Arrays Numeric</a>
         </li>
       </ul>
     </div>
@@ -29,23 +29,24 @@
     <main class="container">
         <div class="row">
             <div class="col-md-6 offset-3 text-center">
-            <?php 
-					# Asignación de Índice automático
-					$cars = array('Volkswagen', 'Toyota', 'Renault');
-					# Asignación de Índice manual
-					$cars[3] = 'Fiat';
-					$cars[4] = 'Mazda';
-					$cars[5] = 'Chevrolet';
+            
+<?php 
+                    # Asignación de Índice automático
+                    $cars = array('Volkswagen', 'Toyota', 'Renault');
+                    # Asignación de Índice manual
+                    $cars[3] = 'Fiat';
+                    $cars[4] = 'Mazda';
+                    $cars[5] = 'Chevrolet';
 
-					//var_dump($cars);
-				?>
-				<div class="btn-group">
-				<?php foreach ($cars as $car): ?>
-					<button type="button" class="btn btn-dark">
-						<?php echo $car ?>
-					</button>
-				<?php endforeach ?>
-				</div>
+                    //var_dump($cars);
+                ?>
+                <div class="btn-group mt-5">
+                <?php foreach ($cars as $car): ?>
+                    <button type="button" class="btn btn-dark">
+                        <?php echo $car ?>
+                    </button>
+                <?php endforeach ?>
+                </div>
            
             </div>
         </div>

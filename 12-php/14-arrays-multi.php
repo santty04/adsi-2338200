@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Arrays Multidimensionals</a>
+          <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">14 Arrays Multidimensionals</a>
@@ -32,23 +32,23 @@
             <?php echo "<h1 class='mt-5'>Arrays Multidimensionals</h1>"; ?>
             <hr>
             <?php 
-					$bicycles = array(
-						'Santa Cruz'  => array('Nomad', 'MegaTower', 'HighTower'),
-						'Intense'     => array('Carbine', 'Tracer', 'Spider'),
-						'Specialized' => array('Enduro', 'Stumjumper', 'Camber')
-					);
-					//var_dump($bicycles);
-				?>
-				<table class="table table-striped table-hover table-bordered">
-					<?php foreach ($bicycles as $brand => $value): ?>
-						<tr>
-							<th class="bg-dark text-light"><?php echo $brand ?></th>
-							<?php foreach ($value as $reference): ?>
-								<td><?php echo $reference; ?></td>
-							<?php endforeach ?>
-						</tr>
-					<?php endforeach ?>
-				</table>
+                    $bicycles = array(
+                        'Santa Cruz'  => array('Nomad', 'MegaTower', 'HighTower'),
+                        'Intense'     => array('Carbine', 'Tracer', 'Spider'),
+                        'Specialized' => array('Enduro', 'Stumjumper', 'Camber')
+                    );
+                    //var_dump($bicycles);
+                ?>
+                <table class="table table-striped table-hover table-bordered">
+                    <?php foreach ($bicycles as $brand => $value): ?>
+                        <tr>
+                            <th class="bg-dark text-light"><?php echo $brand ?></th>
+                            <?php foreach ($value as $reference): ?>
+                                <td><?php echo $reference; ?></td>
+                            <?php endforeach ?>
+                        </tr>
+                    <?php endforeach ?>
+                </table>
            
             </div>
         </div>

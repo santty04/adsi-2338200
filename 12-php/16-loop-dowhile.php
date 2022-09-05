@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Loop do While" ?> </title>
+    <title> <?="Hello World" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Loop do While</a>
+          <a class="nav-link active" aria-current="page" href="#">01 Hello World</a>
         </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
     <main class="container">
         <div class="row">
             <div class="col-md-6 offset-3 text-center">
-            <?php echo "<h1 class='mt-5'>Loop do While</h1>"; ?>
+            <?php echo "<h1 class='mt-5'>Hello World</h1>"; ?>
             <hr>
             <nav>
 			  		<ul class="pagination pagination-lg justify-content-center mt-5">

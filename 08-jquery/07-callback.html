@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #303840;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card text-start my-5">
+                  <div class="card-body">
+                    <nav class="breadcrumb">
+                        <a class="breadcrumb-item" href="index.html">Main Menu </a>
+
+                        <span class="breadcrumb-item active" aria-current="page">Callback</span>
+                    </nav>
+                    <hr>
+                    
+                    <section class="card-text">
+                        <figure class="text-start">
+                            <img src="images/drhedo.png" width="260px">
+                        </figure>
+                    </section>
+                  </div>
+                </div>
+            </div>
+           
+        </div>
+        <header>
+
+        </header>
+        <section>
+            <nav>
+
+            </nav>
+        </section>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+             $('figure img').animate({left: '80%'}, 2000, function() {
+                $('figure img').css('transform', 'rotateY(-180deg)')
+                .animate({left: '0%'}, 2000, function() {
+                    $('figure img').css('transform', 'rotateY(0deg')
+                    animateHedo()
+                })
+             })
+        });
+        function animateHedo(){
+            $('figure img').animate({left: '80%'}, 2000, function() {
+                $('figure img').css('transform', 'rotateY(-180deg)')
+                .animate({left: '0%'}, 2000, function() {
+                    $('figure img').css('transform', 'rotateY(0deg')
+                })
+             })
+        }
+     </script>
+</body>
+</html>

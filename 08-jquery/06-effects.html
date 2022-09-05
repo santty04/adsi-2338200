@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/_root.scss">
+    <title>Effects</title>
+    <style>
+        @keyframes animate {
+            from{
+                transform: translateX(10px);
+            }
+            to{
+                transform: translateX(100px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-14213d">
+    <main class="container ">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center my-5 text-white border-bottom border-light">Effects</h1>
+                
+                <div class="card text-center my-5">
+                    <div class="card-body">
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item "><a class="link-dark" href="index.html">Main Menu (jQuery)</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Effects</li>
+                            </ol>
+                          </nav>
+                      <section class="card-text">
+                        <select class="form-select my-2">
+                            <option value=""disabled>Select a jQuery effect ...</option>
+                            <option value="1" class="hide">Hide</option>
+                            <option value="2"disabled class="show">Show</option>
+                            <option value="3">Toggle</option>
+                            <option value="4"disabled class="slide_down">Slide Down</option>
+                            <option value="5" class="slide_up">Slide Up</option>
+                            <option value="6" class="slide_toggle">Slide Toggle</option>
+                            <option value="7"disabled class="fade_in">Fade in</option>
+                            <option value="8" class="fade_out">Fade out</option>
+                            <option value="9"disabled class="fade_to">Fade to</option>
+                            <option value="10">Fade Toggle</option>
+                            <option value="11">Animate</option>
+                            <option value="12">Stop</option>
+                        </select>
+                        <figure class="border ">
+                            <img src="images/gamma2.webp" width="290px">
+                            <figcaption>Gamma 2</figcaption>
+                        </figure>
+                      </section>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('select').change(function(evt){
+                evt.preventDefault()
+                switch ($(this).val()) {
+                    case '1':
+                    $('figure').hide(1000)
+                    $('.hide').prop('disabled', true);
+                    $('.show').prop('disabled', false);
+                    $('.slide_down').prop('disabled', false);
+                    
+                        break;
+                    case '2':
+                    $('figure').show(1000)
+                    $('.show').prop('disabled', true);
+                    $('.hide').prop('disabled', false);
+                        break;
+                    case '3':
+                    $('figure').toggle(1000)
+                    $('.show').prop('disabled', false);
+                    $('.hide').prop('disabled', true);
+                    
+                        break;
+                    case '4':
+                    $('figure').slideDown(1000)
+                    $('.slide_down').prop('disabled', true);
+                    $('.slide_up').prop('disabled', false);
+                    $('.slide_toggle').prop('disabled', false);
+                        break;
+                    case '5':
+                    $('figure').slideUp(1000)
+                    $('.slide_down').prop('disabled', false);
+                    $('.slide_up').prop('disabled', true);
+                    
+                        break;
+                    case '6':
+                    $('figure').slideToggle(1000)//
+                    $('.slide_down').prop('disabled', false);
+                    $('.slide_toggle').prop('disabled', true);
+                    $('.slide_up').prop('disabled', true);
+                    
+                    
+                        break;
+                    case '7':
+                    $('figure').fadeIn(1000)
+                    $('.fade_in').prop('disabled', true);
+                    $('.fade_out').prop('disabled', false);
+                    // $('.fade_to').prop('disabled', false);
+                        break;
+                    case '8':
+                    $('figure').fadeOut(1000)//
+                    $('.fade_in').prop('disabled', false);
+                    $('.fade_out').prop('disabled', true);
+                    
+                        break;
+                    case '9':
+                    $('figure').fadeTo(1000)
+                        break;
+                    case '10':
+                    $('.fade_out').prop('disabled', true);
+                    $('.fade_in').prop('disabled', false);
+                            $('figure').fadeToggle(1000)
+                        break;
+                    case '11':
+                    $('figure').animate()//
+                        break;
+                    default:
+                        break;
+                }
+            })
+        });
+    </script>
+</body>
+</html>

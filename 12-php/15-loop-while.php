@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Loops while" ?> </title>
+    <title> <?="Hello World" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Loops while</a>
+          <a class="nav-link active" aria-current="page" href="#">01 Hello World</a>
         </li>
       </ul>
     </div>
@@ -29,21 +29,13 @@
     <main class="container">
         <div class="row">
             <div class="col-md-6 offset-3 text-center">
-            <?php echo "<h1 class='mt-5'>Loops while</h1>"; ?>
+            <?php echo "<h1 class='mt-5'>Hello World</h1>"; ?>
             <hr>
-            <nav>
-			  		<ul class="pagination justify-content-center">
-				    	<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						<?php 
-							$i = 1;
-							while($i <= 10) {
-								echo '<li class="page-item"><a class="page-link" href="#">'.$i.'</a></li>';
-								$i++;
-							}
-						?>
-					<li class="page-item"><a class="page-link" href="#">Next</a></li>
-			  	</ul>
-			  </nav>
+            <?php
+            print('<p class="text-start text muted lh-lg">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto vel magni, officia neque similique distinctio impedit libero, quod reiciendis, pariatur provident. Iusto perspiciatis voluptas exercitationem delectus, facilis voluptate provident inventore soluta accusamus assumenda vel placeat at maiores nihil impedit ullam vero natus, cupiditate nisi, quaerat eaque excepturi sunt quisquam! Hic necessitatibus perferendis odio itaque nobis, ipsum ullam placeat dicta fugiat praesentium, nam maxime ex dignissimos? Deleniti sapiente corrupti veritatis a sed exercitationem beatae vitae, commodi perferendis! Maxime perferendis reprehenderit facilis, et possimus corrupti odit accusamus officiis quasi qui enim nemo vero recusandae ducimus veniam nihil reiciendis magnam expedita provident deleniti!
+            </p>')
+            ?>
            
             </div>
         </div>

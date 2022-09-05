@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Date and Time" ?> </title>
+    <title> <?="Date & Time" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">24 Date and Time</a>
+          <a class="nav-link active" aria-current="page" href="#">24 Date & Time</a>
         </li>
       </ul>
     </div>
@@ -29,23 +29,23 @@
     <main class="container">
         <div class="row">
             <div class="col-md-6 offset-3 text-center">
-            <?php echo "<h1 class='mt-5'>Date and Time</h1>"; ?>
+            <?php echo "<h1 class='mt-5'>Date & Time</h1>"; ?>
             <hr>
             <div class="jumbotron">
 					<p class="lead text-center">
-						<strong>hour-minutes-seconds: </strong>
+						<strong>Hour-Minutes-Seconds: </strong>
 						<?php echo date('h:i:s') ?>
 					</p>
 					<p class="lead text-center">
-						<strong>day-month-year: </strong>
+						<strong>Day-Month-Year: </strong>
 						<?php echo date('d-m-Y') ?>
 					</p>
 					<p class="lead text-center">
-						<strong>Name of day: </strong>
+						<strong>Name Day: </strong>
 						<?php echo date('l') ?>
 					</p>
 					<p class="lead text-center">
-						<strong>Full year: </strong>
+						<strong>Full Year: </strong>
 						<?php echo date('Y') ?>
 					</p>
 					<p class="lead text-center">
@@ -53,7 +53,7 @@
 						<?php echo date('e') ?>
 					</p>
 					<p class="lead text-center">
-						<strong>Time UNIX: </strong>
+						<strong>Time Unix: </strong>
 						<?php echo time() ?>
 					</p>
 				</div>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Loop Foreach" ?> </title>
+    <title> <?="Hello World" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
 		button.btn-custom { 
@@ -30,7 +30,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Loop Foreach</a>
+          <a class="nav-link active" aria-current="page" href="#">01 Hello World</a>
         </li>
       </ul>
     </div>
@@ -39,16 +39,16 @@
     <main class="container">
         <div class="row">
             <div class="col-md-6 offset-3 text-center">
-            <?php echo "<h1 class='mt-5'>Loop Foreach</h1>"; ?>
+            <?php echo "<h1 class='mt-5'>Hello World</h1>"; ?>
             <hr>
             <?php 
 					$buttons = array('btn-danger', 'btn-warning', 'btn-success', 'btn-primary', 'btn-info', 'btn-secondary', 'btn-dark', 'btn-light', 'btn-link', 'btn-custom');
 				?>
 				<?php foreach ($buttons as $button): ?>
-					<div class="mb-2">
-                    <button class="btn btn-lg btn-block <?php echo $button; ?>">
-						<?php echo $button; ?>
-					</button>
+                    <div class="mb-2">
+                        <button class="btn btn-lg btn-block <?php echo $button; ?>">
+                            <?php echo $button; ?>
+                        </button>
                     </div>
 				<?php endforeach ?>
            

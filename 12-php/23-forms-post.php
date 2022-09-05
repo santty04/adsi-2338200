@@ -32,34 +32,34 @@
             <?php echo "<h1 class='mt-5 text-center'>Forms Post</h1>"; ?>
             <hr>
             <form action="" method="POST">
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Full Name:</label>
-                        <input type="text" class="form-control <?php if ($_POST && empty($_POST['name'])):?>is-invalid <?php endif ?>" name="name" id="name">
+					<div class="mb-3">
+						<label for="name" class="form-label">Full Name:</label>
+						<input type="text" class="form-control <?php if ($_POST && empty($_POST['name'])):?>is-invalid <?php endif ?>" name="name" id="name">
                         <div class="invalid-feedback">
                             Please enter a Full Name.
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="text" class="form-control <?php if ($_POST && empty($_POST['email'])):?>is-invalid <?php endif ?>" name="email" id="email">
+					</div>
+					<div class="mb-3">
+						<label for="email" class="form-label">Email:</label>
+						<input type="text" class="form-control <?php if ($_POST && empty($_POST['email'])):?>is-invalid <?php endif ?>" name="email" id="email">
                         <div class="invalid-feedback">
                             Please enter a Email.
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <input type="submit" class="btn btn-success" value="Send Form">
-                        <input type="reset" class="btn btn-light" value="Clear Form">
-                    </div>
-                </form>
-                <?php if ($_POST): ?>
-                    <?php if (!empty($_POST['email']) && !empty($_POST['name'])):?>
-                        <div class="alert alert-success">
-                            <strong>Full Name:</strong> <?php echo $_POST['name']; ?>
-                            <br>
-                            <strong>Email:</strong> <?php echo $_POST['email']; ?>
-                        </div>
+					</div>
+					<div class="mb-3">
+						<input type="submit" class="btn btn-success" value="Send Form">
+						<input type="reset" class="btn btn-light" value="Clear Form">
+					</div>
+				</form>
+				<?php if ($_POST): ?>
+                    <?php if (!empty($_POST['name']) && !empty($_POST['email'])):?>
+					<div class="alert alert-success">
+						<strong>Full Name:</strong> <?php echo $_POST['name']; ?>
+						<br>
+						<strong>Email:</strong> <?php echo $_POST['email']; ?>
+					</div>
                     <?php endif ?>
-                <?php endif ?>
+				<?php endif ?>
            
             </div>
         </div>

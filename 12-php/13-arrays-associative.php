@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?="Hello World" ?> </title>
+    <title> <?="Arrays Associative" ?> </title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Hello World</a>
+          <a class="nav-link active" aria-current="page" href="#">13 Arrays Associative</a>
         </li>
       </ul>
     </div>
@@ -32,25 +32,23 @@
             <?php echo "<h1 class='mt-5'>Arrays Associative</h1>"; ?>
             <hr>
             <?php 
-					$studends = array('Tanjiro Kamado'    => 16, 
-						              'Nezuko Kamado'     => 15, 
-						              'Zenitsu Agatsuma'  => 17,
-						              'Inosuke Hashibira' => 18);
-					$studends['Genya Shinazugawa'] = 20;
-					$studends['Kanao Tsuyuri']     = 19;
+                    $studends = array('Tanjiro Kamado'    => 16, 
+                                      'Nezuko Kamado'     => 15, 
+                                      'Zenitsu Agatsuma'  => 17,
+                                      'Inosuke Hashibira' => 18);
+                    $studends['Genya Shinazugawa'] = 20;
+                    $studends['Kanao Tsuyuri']     = 19;
 
-					//var_dump($studends);
-				?>
-				<div class="btn-group-vertical" style="width: 18rem">
-				<?php foreach ($studends as $key => $value): ?>
-					<button type="button" class="btn btn-info text-start">
-						<?php echo $key ?>
-						<!-- <span class="badge badge-danger float-right"></span> -->
-                        <span class="badge rounded-pill bg-dark float-end">Age:<?php echo $value?></span>
+                    //var_dump($studends);
+                ?>
+                <div class="btn-group-vertical" style="width:15rem;">
+                <?php foreach ($studends as $key => $value): ?>
+                    <button type="button" class="btn btn-info text-start">
+                        <?php echo $key ?>
+                        <span class="badge rounded-pill bg-dark float-end">Age:<?php echo $value ?></span>
                     </button>
-				<?php endforeach ?>
-				</div>
-           
+                <?php endforeach ?>
+                </div>
             </div>
         </div>
     

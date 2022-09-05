@@ -17,10 +17,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Forms Get</a>
+          <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">22 Forms get</a>
+          <a class="nav-link active" aria-current="page" href="#">22 Forms Get</a>
         </li>
       </ul>
     </div>
@@ -28,8 +28,8 @@
 </nav>
     <main class="container">
         <div class="row">
-            <div class="col-md-6 offset-3 ">
-            <?php echo "<h1 class='mt-5 text-center'>Forms (get)</h1>"; ?>
+            <div class="col-md-6 offset-3">
+            <?php echo "<h1 class='mt-5 text-center'>Forms Get</h1>"; ?>
             <hr>
             <form action="" method="GET">
 					<div class="mb-3">

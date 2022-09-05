@@ -20,7 +20,7 @@
           <a class="nav-link" aria-current="page" href="index.php">Main Menu</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">01 Functions</a>
+          <a class="nav-link active" aria-current="page" href="#">19 Functions</a>
         </li>
       </ul>
     </div>
@@ -36,7 +36,7 @@
 						echo "Jeremias Springfield";
 					}
 				?>
-				<div class="mt-4 p-5 bg-info text-dark rounded">
+				<div class="mt-4 p-5 bg-primary text-white rounded">
 				  <div class="container">
 				    <h1 class="display-5"><?php show_name(); ?></h1>
 				    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
