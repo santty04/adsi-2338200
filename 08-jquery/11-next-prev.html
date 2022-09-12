@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <style>
+        body{
+            background-color: #F0A309;
+        }
+        .bg-card{
+            background-image: url(images/nextprev/bg.jpg);
+            background-size: cover;
+        }
+        .btn-orange{
+            background-color: #F0A309;
+        }
+        .btn-orange:is(:hover, :focus){
+            border: 1px solid #F0A309;
+            background-color: #F0A309;
+        }
+        figure{
+            margin-bottom: 0;
+            filter: grayscale(1);
+            transition: all 0.5s ease-in;
+        }
+        figure figcaption{
+            opacity: 0;
+        }
+        figure.active{
+            filter: grayscale(0);
+            transform: scale(1.2);
+        }
+        figure.active figcaption{
+            opacity: 1;
+        }
+    </style>
+<body>
+    <main>
+        <header class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card text-center my-5 bg-card text-light">
+                      <div class="card-body">
+                        <nav class="breadcrumb">
+                            <a class="breadcrumb-item" href="index.html">Main Menu</a>
+                            <span class="breadcrumb-item active" aria-current="page">Next & Prev</span>
+                        </nav>
+                        <hr>
+                        <section class="card-text">
+                            <div class="controls">
+                                <button class="btn sm btn-orange btnFirst">First</button>
+                                <button class="btn sm btn-orange btnAutoPlay">Auto</button>
+                                <button class="btn sm btn-orange btnLast">Last</button>
+                            </div>
+                            <div class="content my-5 d-flex align.item-center justify-content-between">
+                                <button class="btn btnPrev"><img src="images/nextprev/arrow-l.png"></button>
+                                <div class="carousel d-flex gap-4">
+                                    <figure class="active">
+                                        <img src="images/nextprev/card1.png">
+                                        <figcaption>Tommy 1</figcaption>
+                                    </figure> 
+                                    <figure>
+                                        <img src="images/nextprev/card2.png">
+                                        <figcaption>Tommy 2</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="images/nextprev/card3.png">
+                                        <figcaption>Tommy 3</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="images/nextprev/card4.png">
+                                        <figcaption>Family</figcaption>
+                                    </figure>
+                
+                                    
+                                </div>
+                                <button class="btn btnNext"><img src="images/nextprev/arrow-r.png"></button>
+                            </div>
+                        </section>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <nav>
+            </nav>
+        </section>
+    </main>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            currentActive()
+
+            $('.btnFirst').click(function (e) {
+                e.preventDefault()
+                removeActive()
+                $('figure').first().addClass('active')
+                currentActive()
+            })
+            $('.btnLast').click(function (e) {
+                e.preventDefault()
+                removeActive()
+                $('figure').last().addClass('active')
+                currentActive()
+            })
+            $('.btnNext').click(function (e) {
+                e.preventDefault()
+                if($($act).index() < 4){
+                removeActive()
+                $($act).next().addClass('active')
+                currentActive()
+                }else{
+                    removeActive()
+                    $('figure').first().addClass('active')
+                    currentActive()
+                }
+            })
+            $('.btnPrev').click(function (e) {
+                e.preventDefault()
+                removeActive()
+                if($($act).index() > 0){
+                    
+                }
+            })
+        });
+
+        function currentActive() {
+            $act = $('figure.active')
+        }
+        function removeActive() {
+            $('figure').removeClass('active')
+        }
+    </script>
+</body>
+</html>
