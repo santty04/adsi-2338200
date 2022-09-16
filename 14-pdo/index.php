@@ -20,7 +20,7 @@
                     Web App Pokemons
                 </h1>
                 <hr>
-                <a href="add-pokemons.php" class="btn btn-lg btn-outline-success">
+                <a href="add.php" class="btn btn-lg btn-outline-success">
                     <i class="fa fa-plus"></i>
                     Add pokemons</a>
                 <div class="table-responsive">
@@ -56,7 +56,7 @@
                                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                                             <li><a class="dropdown-item" href="show.php?id=<?php echo $pokemon['id']?>"><i class="fa fa-search"></i> Show</a></li>
                                             <li><a class="dropdown-item" href="edit.php?id=<?php echo $pokemon['id']?>"><i class="fa fa-pen"></i> Edit</a></li>
-                                            <li><a class="dropdown-item text-danger" href="#"><i class="fa fa-trash"></i> Delete</a></li>
+                                            <li><a class="dropdown-item text-danger btn-delete" data-id="<?php echo $pokemon['id']?>" href="javascript:;"><i class="fa fa-trash"></i> Delete</a></li>
                                         </ul>
                                     </div>
                                     </td>
@@ -76,12 +76,36 @@
     <script src="public/js/sweetalert2.js"></script>
     <script>
         $(document).ready(function () {
-            // Swal.fire(
-            //     'Good job!',
-            //     'Everything is OK!',
-            //     'success'
+            <?php if (isset($_SESSION['message'])):?>
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: '<?php echo $_SESSION['message']?>',
+            showConfirmButton: true,
+            
+            })
+            <?php endif?>
+            <?php unset($_SESSION['message'])?>
+            // ---------------------
+            $('.btn-delete').click(function (e) {
+                e.preventDefault()
+                $id = $(this).attr('data-id')
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#dc3545',
+                    cancelButtonColor: '#212529',
+                    confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.replace('delete.php?id=' + $id)
+                        }
+                    })
 
-            // )
+                window.location.replace('delete.php?id=' + $id)
+            })
         });
     </script>
 </body>

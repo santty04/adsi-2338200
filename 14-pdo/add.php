@@ -40,7 +40,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="name" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name Of Pokemon" required>
                     </div>
                     <div class="mb-3">
                         <label for="type" class="form-label">type:</label>
@@ -98,6 +98,34 @@
                     </div>
                     
                 </form>
+                <?php 
+                    if($_POST){
+                        // var_dump($_POST);
+                        // echo "<hr>";
+                        // var_dump($_FILES);
+                        $name = $_POST['name'];
+                        $type = $_POST['type'];
+                        $strength = $_POST['strenght'];
+                        $stamina = $_POST['stamina'];
+                        $speed = $_POST['speed'];
+                        $accuracy = $_POST['accuracy'];
+                        $trainer_id = $_POST['trainer_id'];
+                        // Upload image
+                        $path = "public/images/";
+                        $image = $path.time().".".pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                        move_uploaded_file($_FILES['image']['tmp_name'], $image);
+
+                        if(addPokemon($conx, $name, $type, $strength, $stamina, $speed, $accuracy, $image, $trainer_id)){
+                            $_SESSION['message'] = "Pokemon : $name was added!";
+                            echo "<script>
+                                    window.location.replace('index.php')
+                            </script>";
+                            
+                        } else {
+                            $_SESSION['error'] = "Pokemon Name: $name already exist!";
+                        }
+                    }
+                ?>
             </div>
         </section>
         <?php $conx = null?>
@@ -107,9 +135,11 @@
         <script src="public/js/sweetalert2.js"></script>
         <script>
         $(document).ready(function () {
+            // -----------------------
             $('.btn-upload').click(function() {
                 $('#image').click();
             });
+            // -----------------------
             $('#image').change(function(event) {
                 let reader = new FileReader()
                 reader.onload = function(event) {
@@ -117,6 +147,17 @@
                 }
                 reader.readAsDataURL(this.files[0]);
             })
+            // ------------------------
+            <?php if (isset($_SESSION['error'])):?>
+            Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '<?php echo $_SESSION['error']?>',
+            showConfirmButton: true,
+            
+            })
+            <?php endif?>
+            <?php unset($_SESSION['error'])?>
         });
     </script>
 </body>
