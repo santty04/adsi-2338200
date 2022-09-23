@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-09-2022 a las 18:26:00
+-- Tiempo de generación: 23-09-2022 a las 15:18:48
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -95,6 +95,9 @@ CREATE TABLE `trainers` (
   `id` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
   `level` int(11) NOT NULL DEFAULT 1,
+  `email` varchar(32) NOT NULL,
+  `photo` varchar(64) NOT NULL DEFAULT 'public/images/trainer.png',
+  `password` varchar(64) NOT NULL DEFAULT '827ccb0eea8a706c4c34a16891f84e7b',
   `gym_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -102,12 +105,12 @@ CREATE TABLE `trainers` (
 -- Volcado de datos para la tabla `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `name`, `level`, `gym_id`) VALUES
-(1, 'Ash Ketchum', 1, 1),
-(2, 'Brock', 5, 2),
-(3, 'Misty', 4, 2),
-(4, 'Serena', 4, 2),
-(5, 'Oak', 9, 1);
+INSERT INTO `trainers` (`id`, `name`, `level`, `email`, `photo`, `password`, `gym_id`) VALUES
+(1, 'Ash Ketchum', 1, 'ash@gmail.com', 'public/images/trainer.png', '827ccb0eea8a706c4c34a16891f84e7b', 1),
+(2, 'Brock', 5, 'brock@gmail.com', 'public/images/trainer.png', '827ccb0eea8a706c4c34a16891f84e7b', 2),
+(3, 'Misty', 4, 'misty@gmail.com', 'public/images/trainer.png', '827ccb0eea8a706c4c34a16891f84e7b', 2),
+(4, 'Serena', 4, 'serena@gmail.com', 'public/images/trainer.png', '827ccb0eea8a706c4c34a16891f84e7b', 2),
+(5, 'Oak', 9, 'oak@gmail.com', 'public/images/trainer.png', '827ccb0eea8a706c4c34a16891f84e7b', 1);
 
 -- --------------------------------------------------------
 
@@ -154,6 +157,7 @@ ALTER TABLE `pokemons`
 --
 ALTER TABLE `trainers`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
   ADD KEY `gym_id` (`gym_id`);
 
 --

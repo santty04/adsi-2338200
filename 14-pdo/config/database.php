@@ -85,6 +85,30 @@
             // echo $e->getMessage();
         }
     }
+    // Login Trainers
+    function login($conx, $email, $pass) {
+        try {
+            $sql = "SELECT * FROM trainers WHERE email = :email
+                                            AND password = :pass
+                                            LIMIT 1";
+            $stm = $conx->prepare($sql);
+            $stm->bindparam(":email", $email);
+            $stm->bindparam(":pass", $pass);
+            $stm->execute();
+            if($stm->rowCount() > 0){
+                $trainer = $stm->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['tid'] = $trainer['id'];
+                $_SESSION['temail'] = $trainer['email'];
+                $_SESSION['tphoto'] = $trainer['photo'];
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (PDOException $e) {
+            // echo $e->getMessage();
+        }
+    }
     // List All Pokemons
     function listAllPokemons($conx){
         try {

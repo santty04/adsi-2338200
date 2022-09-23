@@ -117,10 +117,7 @@
             </div>
         </section>
         <?php $conx = null?>
-        <script src="public/js/jquery-3.6.0.min.js"></script>
-        <script src="public/js/bootstrap.min.js"></script>
-        <script src="public/js/bootstrap.bundle.min.js"></script>
-        <script src="public/js/sweetalert2.js"></script>
+        <?php include 'includes/scripts.inc'?>
         <script>
         $(document).ready(function () {
             // -----------------------
