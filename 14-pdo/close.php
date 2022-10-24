@@ -5,8 +5,11 @@
     unset($_SESSION['temail']);
     unset($_SESSION['tphoto']);
 
-    if(session_destroy()){
+    if (session_destroy()) {
         echo "<script>
-                    window.location.replace('index.php')
+                window.location.replace('index.php')
              </script>";
-    };
+    }
+
+
+
