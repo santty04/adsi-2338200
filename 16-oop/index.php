@@ -86,7 +86,7 @@
                                                     hover:scale-105">03 - Private</a>
                     </li>
                     <li>
-                        <a href="04-colaboration.php" class="bg-black
+                        <a href="04-collaboration.php" class="bg-black
                                                     bg-opacity-50
                                                     w-96 
                                                     p-4 
@@ -96,7 +96,7 @@
                                                     rounded-lg
                                                     transition
                                                     hover:bg-opacity-100
-                                                    hover:scale-105">04 - Colaboration</a>
+                                                    hover:scale-105">04 - Collaboration</a>
                     </li>
                     <li>
                         <a href="05-parameters.php" class="bg-black
@@ -177,6 +177,132 @@
                                                     hover:bg-opacity-100
                                                     hover:scale-105">10 - Method Abstract</a>
                     </li>
+                    <li>
+                            <a href="11-class-final.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                11 - Class Final
+                            </a>
+                        </li>
+                        <li>
+                            <a href="12-method-final.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                12 - Method Final
+                            </a>
+                        </li>
+                        <li>
+                            <a href="13-clone-object.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                13 - Clone Object
+                            </a>
+                        </li>
+                        <li>
+                            <a href="14-instanceof.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                14 - Instance Of
+                            </a>
+                        </li>
+                        <li>
+                            <a href="15-destruct.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                15 - Destruct
+                            </a>
+                        </li>
+                        <li>
+                            <a href="16-method-static.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                16 - Method Static
+                            </a>
+                        </li>
+                        <li>
+                            <a href="17-interface.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                17 - Interface
+                            </a>
+                        </li>
+                        <li>
+                            <a href="18-name-space.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                18 - Name Space
+                            </a>
+                        </li>
+                        <li>
+                            <a href="19-trait.php" class="bg-black 
+                                                bg-opacity-40 
+                                                w-96 p-4 
+                                                flex
+                                                text-xl
+                                              text-white/75 
+                                                rounded 
+                                                hover:bg-opacity-50
+                                                hover:scale-105">
+                                                
+                                                19 - Trait
+                            </a>
+                        </li>
                 </ol>
                     
             </section>
