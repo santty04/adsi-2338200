@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>MVC -OOP</title>
+<title>MVC - OOP</title>
 <link rel="stylesheet" href="public/css/custom.css">
 <script src="public/js/tailwind-3.0.23.js"></script>
 </head>
@@ -64,7 +64,7 @@
     $(document).ready(function () {
         $('.btn-delete').click(function(event) {
             $id = $(this).attr(data-id)
-            if(confirm("Are you suer ?")) {
+            if(confirm("Are you sure ?")) {
                 window.location.replace('?method=delete&id'+$id)
             }
         })

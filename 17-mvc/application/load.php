@@ -1,11 +1,11 @@
-<?php
+<?php 
+	class Load{
+		public function view($name_view, $data = null){
+			if(is_array($data)){
+				extract($data);
+			}
+			include 'views/'. $name_view;
+		}
+	}
 
-class Load {
-public function view($nombre_vista, $data = null ) {
-if( is_array($data) )
-{
-extract($data);
-}
-include 'views/' . $nombre_vista;
-}
-}
+ ?>
