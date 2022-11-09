@@ -14,14 +14,30 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $gender = '';
+        $name = '';
+
+        if(rand(1,2) == 1){
+            $gender = 'Male';
+            $name = $this->faker->name('male');            
+        }else{
+            $gender = 'Female';
+            $name = $this->faker->name('female');                       
+        }
+
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
+            'fullname'          => $name,
+            'email'             => $this->faker->unique()->safeEmail(),
+            'phone'             => $this->faker->phoneNumber(),
+            'birthdate'         => $this->faker->dateTimeBetween('1970-01-01', '2002-12-31'),
+            'gender'            => $gender,
+            'address'           => $this->faker->secondaryAddress(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'password'          => bcrypt('customer'), // password
+            'remember_token'    => Str::random(10),
         ];
     }
+    
 
     /**
      * Indicate that the model's email address should be unverified.
