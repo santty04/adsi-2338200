@@ -16,6 +16,13 @@ class Game extends Model
         'user_id',
         'category_id',
         'slider',
-        'price',
+        'price'
     ];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+    public function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
 }

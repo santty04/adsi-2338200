@@ -15,30 +15,31 @@ class GameSeeder extends Seeder
     public function run()
     {
         $gm = new Game;
-        $gm->name = 'Mario Odyssey';
-        $gm->description = 'Lorem ipsum dolor sit amet';
+        $gm->name = 'Zelda';
+        $gm->description = 'a great game';
         $gm->user_id = 1;
         $gm->category_id = 1;
-        $gm->slider = 1;
-        $gm->price = 55;
-        $gm->save();
-
-        $gm = new Game;
-        $gm->name = 'Halo Infinite';
-        $gm->description = 'Lorem ipsum dolor sit amet';
-        $gm->user_id = 1;
-        $gm->category_id = 2;
         $gm->slider = 0;
         $gm->price = 60;
         $gm->save();
 
         $gm = new Game;
-        $gm->name = 'God of War Ragnarok';
-        $gm->description = 'Lorem ipsum dolor sit amet';
+        $gm->name = 'Forza Horizon';
+        $gm->description = 'race simulated game';
         $gm->user_id = 1;
-        $gm->category_id = 3;
-        $gm->slider = 1;
+        $gm->category_id = 2;
+        $gm->slider = 0;
         $gm->price = 80;
         $gm->save();
+
+        $gm = new Game;
+        $gm->name = 'Spiderman';
+        $gm->description = 'great power had great responsabilities';
+        $gm->user_id = 1;
+        $gm->category_id = 3;
+        $gm->slider = 0;
+        $gm->price = 80;
+        $gm->save();
+        
     }
 }

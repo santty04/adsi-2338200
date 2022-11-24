@@ -16,28 +16,28 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        // ORM
+        //ORM 
         $user = new User;
-        $user->fullname = 'Jeremias Springfield';
-        $user->email = 'jeremias@gmail.com';
-        $user->phone = '3201112222';
-        $user->birthdate = '1980-11-09';
+        $user->fullname = 'Jeremias springfield';
+        $user->email = 'Jeremias@mail.com';
+        $user->phone = '123456789';
+        $user->birthdate = '2000-05-15';
         $user->gender = 'Male';
         $user->address = 'Str Siempre Viva';
         $user->role = 'Admin';
         $user->password = bcrypt('admin');
         $user->save();
-
-        // Method Insert (Array)
+        
+        
         DB::table('users')->insert([
             'fullname' => 'Homer Simpson',
-            'email' => 'homer@gmail.com',
-            'phone' => '3201112222',
-            'birthdate' => '1984-05-06',
+            'email' => 'Homer@mial.com',
+            'phone' => '8888888',
+            'birthdate' => '1976-05-06',
             'gender' => 'Male',
-            'address' => 'Str Siempre Viva',
+            'address' => 'Str Siempre viva',
             'role' => 'Customer',
-            'password' => bcrypt('customer')
+            'password' => Hash::make('customer')
         ]);
     }
 }

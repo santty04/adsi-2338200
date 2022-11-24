@@ -22,22 +22,21 @@ class UserFactory extends Factory
             $name = $this->faker->name('male');            
         }else{
             $gender = 'Female';
-            $name = $this->faker->name('female');                       
-        }
+            $name = $this->faker->name('female'); 
+        } 
 
         return [
-            'fullname'          => $name,
-            'email'             => $this->faker->unique()->safeEmail(),
-            'phone'             => $this->faker->phoneNumber(),
-            'birthdate'         => $this->faker->dateTimeBetween('1970-01-01', '2002-12-31'),
-            'gender'            => $gender,
-            'address'           => $this->faker->secondaryAddress(),
+            'fullname' => $name,
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->phoneNumber(),
+            'birthdate' => $this->faker->dateTimeBetween('1970-01-01', '2010-01-01'),
+            'gender' => $gender,
+            'address' => $this->faker->secondaryAddress(),
             'email_verified_at' => now(),
-            'password'          => bcrypt('customer'), // password
-            'remember_token'    => Str::random(10),
+            'password' => bcrypt('seed'), // password
+            'remember_token' => Str::random(10),
         ];
     }
-    
 
     /**
      * Indicate that the model's email address should be unverified.

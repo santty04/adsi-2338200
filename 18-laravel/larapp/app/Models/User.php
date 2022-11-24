@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'fullname',
         'email',
+        'phone',
         'birthdate',
         'gender',
         'address',
@@ -47,4 +48,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
+
+    // relaciones
+
+    public function games(){
+        return $this->hasMany('App\Models\Game');
+    }
+} // end class

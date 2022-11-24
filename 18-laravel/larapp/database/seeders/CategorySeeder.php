@@ -1,9 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Category;
 
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
@@ -14,19 +14,19 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $ctg = new Category;
-        $ctg->name = 'Nintendo Switch';
-        $ctg->description = 'Lorem ipsum dolor sit amet';
-        $ctg->save();
+        $catg = new Category;
+        $catg->name ='nintendo switch';
+        $catg->description ='a fun game console';
+        $catg->save();
 
-        $ctg = new Category;
-        $ctg->name = 'Xbox Series S/X';
-        $ctg->description = 'Lorem ipsum dolor sit amet';
-        $ctg->save();
+        $catg = new Category;
+        $catg->name ='Xbox X';
+        $catg->description ='play gamepass';
+        $catg->save();
 
-        $ctg = new Category;
-        $ctg->name = 'Play Station 5';
-        $ctg->description = 'Lorem ipsum dolor sit amet';
-        $ctg->save();
+        $catg = new Category;
+        $catg->name ='Play 5';
+        $catg->description ='the world of exclusive games';
+        $catg->save();
     }
 }
